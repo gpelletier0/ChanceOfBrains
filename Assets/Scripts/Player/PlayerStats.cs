@@ -17,7 +17,6 @@ public class PlayerStats
     [SerializeField] float m_minJumpST;
     [SerializeField] float m_AmmoCount;
 
-
     #region Data
     [Header("Data")]
     [HideInInspector] public LayerMask layersCanShoot;
@@ -55,7 +54,6 @@ public class PlayerStats
         m_ST= DEFAULT_STAT;
         m_maxST= DEFAULT_STAT;
         m_minJumpST = DEFAULT_JUMP_ST;
-        m_AmmoCount= DEFAULT_STAT;
     }
 
     #region Getters/Setters
@@ -89,11 +87,11 @@ public class PlayerStats
         get { return m_minJumpST; }
     }
 
-    // Ammo
     public float AmmoCount
     {
         get { return m_AmmoCount; }
         set { m_AmmoCount = value; }
     }
+
     #endregion
 }

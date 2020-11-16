@@ -12,7 +12,7 @@ public class EnemyStats
 
     private const float BASE_HP = 2;
     private const float BASE_DAMAGE = 2;
-    private const float BASE_ATTACK_SPEED = 1;
+    private const float BASE_ATTACK_SPEED = 2;
 
     public EnemyStats(float hp = BASE_HP, float dmg = BASE_DAMAGE, float atkspd = BASE_ATTACK_SPEED)
     {

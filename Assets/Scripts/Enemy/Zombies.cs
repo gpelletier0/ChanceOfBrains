@@ -54,7 +54,17 @@ public class Zombies : MonoBehaviour, IDamageable
 
     public void TakeDamage(float dmg)
     {
-        Debug.Log("Zombie hit for: " + dmg);
+        if(m_EnemyStats.HP >= 0)
+        {
+            Debug.Log("Zombie is hit for: " + dmg);
+            m_EnemyStats.HP -= dmg;
+        }
+
+        if(m_EnemyStats.HP <= 0)
+        {
+            Die();
+        }
+            
     }
 
     public void GiveDamage()
@@ -62,5 +72,11 @@ public class Zombies : MonoBehaviour, IDamageable
         m_EnemyStats.DamageTimer = m_EnemyStats.AttackSpeed;
         Debug.Log("Zombie hits for: " + m_EnemyStats.Damage);
         GameObject.Find("Player").GetComponent<PlayerController>().TakeDamage(m_EnemyStats.Damage);
+    }
+
+    public void Die()
+    {
+        Debug.Log("Zombie Died");
+        Destroy(gameObject);
     }
 }

@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 {
     [Header("Walk/Run")]
     [SerializeField] public float walkSpeed = 2.5f;
-    [SerializeField] public float rungSpeed = 6f;
+    [SerializeField] public float runSpeed = 6f;
 
     [Header("Jump")]
     [SerializeField] public float jumpSpeed = 8.0f;
@@ -21,12 +21,15 @@ public class PlayerController : MonoBehaviour, IDamageable
     [SerializeField] public float lookXLimit = 60.0f;
     [SerializeField] public Transform playerCameraParent;
 
+    [Header("Weapon")]
+    [SerializeField] public M4A1 gun;
+    
     private Vector3 m_moveDir = Vector3.zero;
     private Vector2 m_rotation = Vector2.zero;
 
-    private float m_velocityX;
-    private float m_velocityZ;
-    private float m_velocityY;
+    private float m_Vertical;
+    private float m_Horizontal;
+    private float m_Jump;
     private bool m_isRunning;
     private bool m_canMove;
 
@@ -63,6 +66,12 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         if (m_canMove)
         {
+
+            if (Input.GetButton("Fire1"))
+            {
+                GiveDamage();
+            }
+
             if (m_CharController.isGrounded)
             {
                 // Landed
@@ -72,11 +81,13 @@ public class PlayerController : MonoBehaviour, IDamageable
                 Vector3 right = transform.TransformDirection(Vector3.right);
                 m_isRunning = Input.GetKey(KeyCode.LeftShift);
 
-                m_velocityX = (!m_isRunning ? walkSpeed : getStaminaRunSpeed()) * Input.GetAxis("Vertical");
-                m_velocityZ = (!m_isRunning ? walkSpeed : getStaminaRunSpeed()) * Input.GetAxis("Horizontal");
-                m_velocityY = jumpSpeed * Input.GetAxis("Jump");
+                // Current direction/speed
+                m_Vertical = (!m_isRunning ? walkSpeed : GetRunSpeed()) * Input.GetAxis("Vertical");
+                m_Horizontal = (!m_isRunning ? walkSpeed : GetRunSpeed()) * Input.GetAxis("Horizontal");
+                m_Jump = jumpSpeed * Input.GetAxis("Jump");
 
-                m_moveDir = (forward * m_velocityX) + (right * m_velocityZ);
+                // Move direction vector
+                m_moveDir = (forward * m_Vertical) + (right * m_Horizontal);
 
                 if (Input.GetButton("Jump") && m_PlayerStats.ST >= m_PlayerStats.minJumpST)
                 {
@@ -86,8 +97,8 @@ public class PlayerController : MonoBehaviour, IDamageable
                 }
 
                 // Set animation
-                m_Animator.SetFloat("VelocityX", m_velocityX / rungSpeed);
-                m_Animator.SetFloat("VelocityZ", m_velocityZ / rungSpeed);
+                m_Animator.SetFloat("Vertical", m_Vertical / runSpeed);
+                m_Animator.SetFloat("Horizontal", m_Horizontal / runSpeed);
             }
 
             // Character controler move
@@ -115,9 +126,15 @@ public class PlayerController : MonoBehaviour, IDamageable
         m_PlayerHUD.UpdateStats();
     }
 
-    private float getStaminaRunSpeed()
+    private float GetRunSpeed()
     {
-        return Mathf.Lerp(walkSpeed, rungSpeed, m_PlayerStats.ST / m_PlayerStats.maxST);
+        return Mathf.Lerp(walkSpeed, runSpeed, m_PlayerStats.ST / m_PlayerStats.maxST);
+    }
+
+    public void GiveDamage()
+    {
+        gun.Fire();
+        m_PlayerStats.AmmoCount = gun.m_Ammo;
     }
 
     public void TakeDamage(float dmg)
@@ -128,4 +145,10 @@ public class PlayerController : MonoBehaviour, IDamageable
             m_PlayerStats.HP -= dmg;
         }
     }
+
+    public void Die()
+    {
+
+    }
+
 }

@@ -52,6 +52,26 @@ public class Bat : MonoBehaviour, IDamageable
 
     public void TakeDamage(float dmg)
     {
-        Debug.Log("Bat hit for: " + dmg);
+        if (m_EnemyStats.HP >= 0)
+        {
+            Debug.Log("Bat is hit for: " + dmg);
+            m_EnemyStats.HP -= dmg;
+        }
+
+        if (m_EnemyStats.HP <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        Debug.Log("Bat Died");
+        Destroy(gameObject);
+    }
+
+    public void GiveDamage()
+    {
+
     }
 }
