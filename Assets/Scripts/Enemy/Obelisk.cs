@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Obelisk : MonoBehaviour, IDamageable
 {
+    private const int NO_VAMPIREBAT = 1;
     private const int NO_ZOMBIES = 10;
-    private const int NO_BATS = 1;
-    private const string ZOMBIE_PREFAB = "Prefabs/Enemy/Zombie";
-    private const string BAT_PREFAB = "Prefabs/Enemy/Bat";
+    
+    private const string BAT_PREFAB = "Prefabs/Enemies/VampireBat";
+    private const string ZOMBIE_PREFAB = "Prefabs/Enemies/Zombie";
+    
 
     public EnemyStats m_EnemyStats = new EnemyStats(10);
     public List<GameObject> m_ZombiesList;
@@ -15,18 +17,18 @@ public class Obelisk : MonoBehaviour, IDamageable
 
     private void Awake()
     {
-        for(int i = 0; i < NO_BATS; i++)
+        for(int i = 0; i < NO_VAMPIREBAT; i++)
         {
-            GameObject go = Resources.Load<GameObject>(BAT_PREFAB);
-            go.SetActive(false);
-            m_BatsList.Add(go);
+            GameObject bat = Instantiate(Resources.Load<GameObject>(BAT_PREFAB));
+            bat.SetActive(false);
+            m_BatsList.Add(bat);
         }
 
         for(int i = 0; i < NO_ZOMBIES; i++)
         {
-            GameObject go = Resources.Load<GameObject>(ZOMBIE_PREFAB);
-            go.SetActive(false);
-            m_ZombiesList.Add(go);
+            GameObject zombie = Instantiate(Resources.Load<GameObject>(ZOMBIE_PREFAB));
+            zombie.SetActive(false);
+            m_ZombiesList.Add(zombie);
         }
     }
 
