@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour, IDamageable
     [Header("Jump")]
     [SerializeField] public float jumpSpeed = 8.0f;
     [SerializeField] public float gravity = 20.0f;
+    [SerializeField] public float jumpRate = 1.2f;
+    [SerializeField] public float jumpTimer;
+    [SerializeField] public float jumpStam = 10f;
 
     [Header("Stamina")]
     [SerializeField] public float staminaDepletion = 5.0f;
@@ -22,7 +25,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     [SerializeField] public Transform playerCameraParent;
 
     [Header("Weapon")]
-    [SerializeField] public M4A1 gun;
+    [SerializeField] public M4A1 Wepon;
     
     private Vector3 m_moveDir = Vector3.zero;
     private Vector2 m_rotation = Vector2.zero;
@@ -35,7 +38,6 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     private PlayerHUD m_PlayerHUD;
     private PlayerStats m_PlayerStats = PlayerStats.Instance;
-    //private PlayerInput m_PlayerInput;
 
     private Animator m_Animator;
     private CharacterController m_CharController;
@@ -64,6 +66,9 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     private void Update()
     {
+        if(jumpTimer <= jumpRate)
+            jumpTimer += Time.deltaTime;
+
         if (m_canMove)
         {
 
@@ -89,11 +94,13 @@ public class PlayerController : MonoBehaviour, IDamageable
                 // Move direction vector
                 m_moveDir = (forward * m_Vertical) + (right * m_Horizontal);
 
-                if (Input.GetButton("Jump") && m_PlayerStats.ST >= m_PlayerStats.minJumpST)
+                if (Input.GetButton("Jump") && m_PlayerStats.ST >= m_PlayerStats.minJumpST && jumpTimer >= jumpRate)
                 {
                     // Jumped
                     m_Animator.SetBool("isJumping", true);
                     m_moveDir.y = jumpSpeed;
+                    jumpTimer = 0f;
+                    m_PlayerStats.ST -= jumpStam;
                 }
 
                 // Set animation
@@ -133,8 +140,8 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void GiveDamage()
     {
-        gun.Fire();
-        m_PlayerStats.AmmoCount = gun.m_Ammo;
+        Wepon.Fire();
+        m_PlayerStats.AmmoCount = Wepon.m_CurrentAmmo;
     }
 
     public void TakeDamage(float dmg)

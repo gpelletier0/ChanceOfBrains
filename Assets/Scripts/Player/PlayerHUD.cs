@@ -31,9 +31,8 @@ public class PlayerHUD : MonoBehaviour
         m_AmmoCount = GameObject.Find("AmmoCount").GetComponent<Text>();
         m_ObjectiveText = GameObject.Find("ObjectiveText").GetComponent<Text>();
         m_ObjectInteractionText = GameObject.Find("ObjectInteractionText").GetComponent<Text>();
-        m_FadeImage = GameObject.Find("FadeImage").GetComponent<Image>();
+        //m_FadeImage = GameObject.Find("FadeImage").GetComponent<Image>();
         
-
         m_ObjectInteractionText.gameObject.SetActive(false);
     }
 

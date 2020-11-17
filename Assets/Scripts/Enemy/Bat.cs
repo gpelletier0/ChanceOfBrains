@@ -38,10 +38,10 @@ public class Bat : MonoBehaviour, IDamageable
             transform.position = Vector3.MoveTowards(transform.position, flyTargetPos, m_MoveSpeed * Time.deltaTime);
         }
 
-        if (distance <= m_AttackDistance)
-            m_Animation.Play("Attack");
-        else
-            m_Animation.Play("FlyCycle");
+        //if (distance <= m_AttackDistance)
+        //    m_Animation.Play("Attack");
+        //else
+        //    m_Animation.Play("FlyCycle");
 
     }
 

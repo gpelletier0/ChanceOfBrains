@@ -2,27 +2,18 @@
 
 public class M4A1 : MonoBehaviour
 {
-    public const float m_MaxAmmo = 100;
-    [SerializeField] [Range(0, m_MaxAmmo)] public float m_Ammo = m_MaxAmmo;
-    [SerializeField] public float m_Dammage = 1;
-    [SerializeField] public float m_Range = 50;
-    [SerializeField] public float m_FireRate = 0.5f;
+    private const int MAX_AMMO = 100;
+    [SerializeField] public int m_CurrentAmmo = MAX_AMMO;
+    [SerializeField] public int m_Dammage = 1;
+    [SerializeField] public int m_Range = 50;
+    [SerializeField] public float m_FireRate = 0.2f;
     [SerializeField] public float m_Timer;
-    [SerializeField] public Transform m_firePoint;
-
-    private void Awake()
-    {
-        m_Ammo = m_MaxAmmo;
-        m_firePoint = gameObject.GetComponent<Transform>();
-    }
-
-    private void Start()
-    {
-    }
+    [SerializeField] public AudioSource m_FireSound;
 
     private void Update()
     {
-        m_Timer += Time.deltaTime;
+        if(m_Timer < m_FireRate)
+            m_Timer += Time.deltaTime;
     }
 
     public void Fire()
@@ -30,10 +21,10 @@ public class M4A1 : MonoBehaviour
         if (m_Timer >= m_FireRate)
         {
             m_Timer = 0f;
-            if (m_Ammo > 0)
+            if (m_CurrentAmmo > 0)
             {
                 // Muzzle Flash
-                // Play Gunshot sound
+                m_FireSound.Play();
 
                 Ray ray = Camera.main.ViewportPointToRay(Vector3.one * 0.5f);
                 Debug.DrawRay(ray.origin, ray.direction * m_Range, Color.red, 2f);
@@ -50,7 +41,7 @@ public class M4A1 : MonoBehaviour
                         }
                     }
                 }
-                m_Ammo--;
+                m_CurrentAmmo--;
             }
         }
     }
