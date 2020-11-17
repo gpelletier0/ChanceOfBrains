@@ -15,7 +15,6 @@ public class M4A1 : MonoBehaviour
     public AudioSource m_FireSound;
 
     [Header("Bullet")]
-    [SerializeField] public GameObject m_BulletPrefab;
     [SerializeField] public Transform m_FirePoint;
     [SerializeField] public float m_BulletSpeed = 40;
     [SerializeField] public float m_LifeTime = 3;
