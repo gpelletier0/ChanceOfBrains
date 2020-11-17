@@ -14,10 +14,9 @@ public class MainScript : MonoBehaviour
 
     void Start()
     {
-        PlayerStats.Instance.Initalize();   
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(PlayerStats.Instance.HP <= 0 && !bEndGame)

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-public class Zombies : MonoBehaviour, IDamageable
+public class Zombie : MonoBehaviour, IDamageable
 {
     public float m_AggroDistance = 20f;
     public float m_AttackDistance = 1f;
@@ -9,7 +9,7 @@ public class Zombies : MonoBehaviour, IDamageable
     private NavMeshAgent m_Agent;
     private Animator m_Animator;
     private Transform m_Target;
-    private EnemyStats m_EnemyStats = new EnemyStats();
+    private EnemyStats m_EnemyStats = new EnemyStats(2);
 
     private void Awake()
     {

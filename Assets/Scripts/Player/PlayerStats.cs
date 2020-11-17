@@ -37,7 +37,6 @@ public class PlayerStats
 
     private PlayerStats()
     {
-        Initalize();
     }
 
     public static PlayerStats Instance
@@ -47,13 +46,14 @@ public class PlayerStats
     #endregion
 
 
-    public void Initalize()
+    public void Initalize(float ammoCount)
     {
         m_HP = DEFAULT_STAT;
         m_maxHP = DEFAULT_STAT;
         m_ST= DEFAULT_STAT;
         m_maxST= DEFAULT_STAT;
         m_minJumpST = DEFAULT_JUMP_ST;
+        m_AmmoCount = ammoCount;
     }
 
     #region Getters/Setters

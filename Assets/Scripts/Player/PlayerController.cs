@@ -54,10 +54,13 @@ public class PlayerController : MonoBehaviour, IDamageable
         m_CharController = GetComponent<CharacterController>();
         m_Animator = GetComponent<Animator>();
         m_PlayerHUD = GameObject.Find("PlayerHUD").GetComponent<PlayerHUD>();
+        
     }
 
     private void Start()
     {
+        m_PlayerStats.Initalize(Wepon.m_CurrentAmmo);
+
         m_rotation.y = transform.eulerAngles.y;
 
         Cursor.lockState = CursorLockMode.Locked;
@@ -140,7 +143,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void GiveDamage()
     {
-        Wepon.Fire();
+        Wepon.Fire(m_rotation);
         m_PlayerStats.AmmoCount = Wepon.m_CurrentAmmo;
     }
 

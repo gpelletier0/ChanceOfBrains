@@ -12,7 +12,7 @@ public class Bat : MonoBehaviour, IDamageable
 
     private Transform m_Target;
     private Animation m_Animation;
-    private EnemyStats m_EnemyStats = new EnemyStats();
+    private EnemyStats m_EnemyStats = new EnemyStats(4);
 
     private void Awake()
     {
