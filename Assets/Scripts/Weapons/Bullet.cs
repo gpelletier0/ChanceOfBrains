@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        Debug.Log($"Bullet hit: {collider.name}");
+        //Debug.Log($"Bullet hit: {collider.name}");
         
         if(collider.GetComponent<IDamageable>() != null)
         {

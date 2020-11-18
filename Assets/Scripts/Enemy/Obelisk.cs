@@ -4,48 +4,28 @@ using UnityEngine;
 
 public class Obelisk : MonoBehaviour, IDamageable
 {
-    private const int NO_VAMPIREBAT = 1;
-    private const int NO_ZOMBIES = 10;
-    
-    private const string BAT_PREFAB = "Prefabs/Enemies/VampireBat";
-    private const string ZOMBIE_PREFAB = "Prefabs/Enemies/Zombie";
-    
+    [SerializeReference] public EnemyStats m_EnemyStats = new EnemyStats(10);
 
-    public EnemyStats m_EnemyStats = new EnemyStats(10);
-    public List<GameObject> m_ZombiesList;
-    public List<GameObject> m_BatsList;
+    public float m_VampireBatSpawnTime = 2.0f;
+    public float m_ZombieSpawnTime = 10.0f;
+    public GameObject[] m_EnemyPrefabs;
 
-    private void Awake()
+    private float RandomSpawnPos() => Random.Range(-3, 3);
+
+    public void Awake()
     {
-        for(int i = 0; i < NO_VAMPIREBAT; i++)
+        Vector3 pos = new Vector3(transform.position.x + RandomSpawnPos(), m_EnemyPrefabs[0].transform.position.y, transform.position.z + RandomSpawnPos());
+        m_EnemyPrefabs[0] = Instantiate(m_EnemyPrefabs[0], pos, Quaternion.identity);
+        m_EnemyPrefabs[0].SetActive(false);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Roads"))
         {
-            GameObject bat = Instantiate(Resources.Load<GameObject>(BAT_PREFAB));
-            bat.SetActive(false);
-            m_BatsList.Add(bat);
-        }
-
-        for(int i = 0; i < NO_ZOMBIES; i++)
-        {
-            GameObject zombie = Instantiate(Resources.Load<GameObject>(ZOMBIE_PREFAB));
-            zombie.SetActive(false);
-            m_ZombiesList.Add(zombie);
-        }
-    }
-
-    public void Update()
-    {
-        
-    }
-
-    public void Die()
-    {
-        Debug.Log("Obelisk Died");
-        Destroy(gameObject);
-    }
-
-    public void GiveDamage()
-    {
-
+            GetComponent<BoxCollider>().isTrigger = false;
+            StartCoroutine(SpawnEnemy());
+        }   
     }
 
     public void TakeDamage(float dmg)
@@ -57,8 +37,30 @@ public class Obelisk : MonoBehaviour, IDamageable
         }
 
         if (m_EnemyStats.HP <= 0)
-        {
             Die();
+    }
+
+    public void GiveDamage(){}
+
+    public void Die()
+    {
+        Debug.Log("Obelisk Died");
+        Destroy(gameObject);
+    }
+
+    private IEnumerator SpawnEnemy()
+    {
+        yield return new WaitForSeconds(m_VampireBatSpawnTime);
+
+        m_EnemyPrefabs[0].SetActive(true);
+
+        while (true)
+        {
+            yield return new WaitForSeconds(m_ZombieSpawnTime);
+            
+            Debug.Log("Spawn Enemy");
+            Vector3 pos = new Vector3(transform.position.x + RandomSpawnPos(), 0, transform.position.z + RandomSpawnPos());
+            Instantiate(m_EnemyPrefabs[1], pos, Quaternion.identity);
         }
     }
 }
