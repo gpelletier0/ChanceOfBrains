@@ -7177,6 +7177,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000010230679374, guid: fee6e1da33beae9409089ab8a832464f, type: 3}
   m_PrefabInstance: {fileID: 622827775}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &626045106 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 875588845999158623, guid: 7b5728898cbbe224aa2f251cec63728d, type: 3}
+  m_PrefabInstance: {fileID: 9030733770582686022}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d157f10aa9482574080ccbdece4c0139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &630440859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22906,6 +22917,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000012999968834, guid: 46132fa6877a42947bf1f7f15c09f435, type: 3}
   m_PrefabInstance: {fileID: 1762919713}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1774087748 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9030733769552288386, guid: 7b5728898cbbe224aa2f251cec63728d, type: 3}
+  m_PrefabInstance: {fileID: 9030733770582686022}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1777295814
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28584,6 +28600,86 @@ PrefabInstance:
     - target: {fileID: 9030733769094417686, guid: 7b5728898cbbe224aa2f251cec63728d, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.737
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030733769842493639, guid: 7b5728898cbbe224aa2f251cec63728d, type: 3}
+      propertyPath: m_PlayerStats.m_HP
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030733769842493639, guid: 7b5728898cbbe224aa2f251cec63728d, type: 3}
+      propertyPath: m_PlayerStats.m_maxHP
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030733769842493639, guid: 7b5728898cbbe224aa2f251cec63728d, type: 3}
+      propertyPath: m_PlayerStats.m_ST
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030733769842493639, guid: 7b5728898cbbe224aa2f251cec63728d, type: 3}
+      propertyPath: m_PlayerStats.m_maxST
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030733769842493639, guid: 7b5728898cbbe224aa2f251cec63728d, type: 3}
+      propertyPath: m_PlayerStats.m_minJumpST
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030733769842493639, guid: 7b5728898cbbe224aa2f251cec63728d, type: 3}
+      propertyPath: m_PlayerStats
+      value: Assembly-CSharp PlayerStats
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030733769842493639, guid: 7b5728898cbbe224aa2f251cec63728d, type: 3}
+      propertyPath: jumpRate
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030733769842493639, guid: 7b5728898cbbe224aa2f251cec63728d, type: 3}
+      propertyPath: lookXLimit
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030733769842493639, guid: 7b5728898cbbe224aa2f251cec63728d, type: 3}
+      propertyPath: m_PlayerStats.m_AmmoCount
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030733769842493639, guid: 7b5728898cbbe224aa2f251cec63728d, type: 3}
+      propertyPath: m_PlayerStats.layersCanShoot.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030733769842493639, guid: 7b5728898cbbe224aa2f251cec63728d, type: 3}
+      propertyPath: m_PlayerStats.rateOfFire
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030733769842493639, guid: 7b5728898cbbe224aa2f251cec63728d, type: 3}
+      propertyPath: m_PlayerStats.shotDamage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030733769842493639, guid: 7b5728898cbbe224aa2f251cec63728d, type: 3}
+      propertyPath: m_PlayerStats.shotRange
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030733769842493639, guid: 7b5728898cbbe224aa2f251cec63728d, type: 3}
+      propertyPath: m_PlayerStats.timeCanNextShoot
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030733769842493639, guid: 7b5728898cbbe224aa2f251cec63728d, type: 3}
+      propertyPath: m_PlayerStats.timeOfVisibleShotRenderer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030733769842493639, guid: 7b5728898cbbe224aa2f251cec63728d, type: 3}
+      propertyPath: playerCameraParent
+      value: 
+      objectReference: {fileID: 1774087748}
+    - target: {fileID: 9030733769842493639, guid: 7b5728898cbbe224aa2f251cec63728d, type: 3}
+      propertyPath: Wepon
+      value: 
+      objectReference: {fileID: 626045106}
+    - target: {fileID: 9030733769842493639, guid: 7b5728898cbbe224aa2f251cec63728d, type: 3}
+      propertyPath: m_HP
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030733769842493639, guid: 7b5728898cbbe224aa2f251cec63728d, type: 3}
+      propertyPath: m_ST
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030733769842493639, guid: 7b5728898cbbe224aa2f251cec63728d, type: 3}
+      propertyPath: m_MinJumpST
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b5728898cbbe224aa2f251cec63728d, type: 3}

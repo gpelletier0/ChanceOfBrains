@@ -15,7 +15,8 @@ public class MainScript : MonoBehaviour
     public GameObject m_Obelisk;
     public float m_ObeliskSpawnTime;
 
-    private float m_Timer;
+
+    private bool m_EndGame = false;
     private List<GameObject> m_ObeliskList = new List<GameObject>();
 
     private void Awake()
@@ -40,19 +41,21 @@ public class MainScript : MonoBehaviour
 
     private void Update()
     {
-        if (PlayerStats.Instance.HP <= 0)
+        if (!m_EndGame)
         {
-            m_PlayerController.CanMove = false;
-            m_PlayerHUD.ShowObjectiveText("YOU DIED", Color.red);
-            Invoke("m_PlayerHUD.HideObjectiveText", m_PlayerHUD.m_TextDisplayTime);
-            m_PlayerHUD.Fade(2, eFadeType.OUT);
-        }
-        else if (AreAllObelisksDead())
-        {
-            m_PlayerController.CanMove = false;
-            m_PlayerHUD.ShowObjectiveText("YOU WIN", Color.red);
-            Invoke("m_PlayerHUD.HideObjectiveText", m_PlayerHUD.m_TextDisplayTime);
-            m_PlayerHUD.Fade(2, eFadeType.OUT);
+            if (PlayerStats.Instance.HP <= 0)
+            {
+                m_PlayerHUD.ShowObjectiveText("YOU DIED", Color.red);
+                m_PlayerHUD.Fade(2, eFadeType.OUT);
+                StartCoroutine(Pause());
+            }
+            else if (AreAllObelisksDead())
+            {
+                m_PlayerController.CanMove = false;
+                m_PlayerHUD.ShowObjectiveText("YOU WIN", Color.red);
+                m_PlayerHUD.Fade(2, eFadeType.OUT);
+                StartCoroutine(Pause());
+            }
         }
     }
 
@@ -74,5 +77,12 @@ public class MainScript : MonoBehaviour
             yield return new WaitForSeconds(m_ObeliskSpawnTime);
             go.SetActive(true);
         }
+    }
+
+    public IEnumerator Pause()
+    {
+        m_EndGame = true;
+        yield return new WaitForSeconds(m_PlayerHUD.m_TextDisplayTime);
+        Time.timeScale = 0;
     }
 }

@@ -52,7 +52,6 @@ public class PlayerHUD : MonoBehaviour
         if (m_ObjectiveText)
         {
             ShowObjectiveText("Destroy all Obelisks!", Color.red);
-            Invoke("HideObjectiveText", m_TextDisplayTime);
         }
     }
 
@@ -141,6 +140,8 @@ public class PlayerHUD : MonoBehaviour
             if (str != null)
                 m_ObjectiveText.text = str;
         }
+
+        Invoke("HideObjectiveText", m_TextDisplayTime);
     }
 
     public void HideObjectiveText()

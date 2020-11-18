@@ -3,30 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
 public class PlayerStats
 {
-    private const float DEFAULT_STAT = 100;
-    private const float DEFAULT_JUMP_ST = 20;
-
-    [Header("Stats")]
-    [SerializeField] float m_HP;
-    [SerializeField] float m_maxHP;
-    [SerializeField] float m_ST;
-    [SerializeField] float m_maxST;
-    [SerializeField] float m_minJumpST;
-    [SerializeField] float m_AmmoCount;
-
-    #region Data
-    [Header("Data")]
-    [HideInInspector] public LayerMask layersCanShoot;
-    [HideInInspector] public float rateOfFire;
-    [HideInInspector] public float shotDamage;
-    [HideInInspector] public float shotRange;
-    [HideInInspector] public float timeCanNextShoot;
-    [HideInInspector] public float timeOfVisibleShotRenderer;
-    #endregion
-
+    public const float DEFAULT_STAT = 100;
 
     #region Singleton
     private static readonly PlayerStats instance = new PlayerStats();
@@ -46,52 +25,31 @@ public class PlayerStats
     #endregion
 
 
-    public void Initalize(float ammoCount)
+    public void Defaults(float ammoCount)
     {
-        m_HP = DEFAULT_STAT;
-        m_maxHP = DEFAULT_STAT;
-        m_ST= DEFAULT_STAT;
-        m_maxST= DEFAULT_STAT;
-        m_minJumpST = DEFAULT_JUMP_ST;
-        m_AmmoCount = ammoCount;
+        HP = DEFAULT_STAT;
+        maxHP = DEFAULT_STAT;
+        ST= DEFAULT_STAT;
+        maxST= DEFAULT_STAT;
+        minJumpST = 0;
+        AmmoCount = DEFAULT_STAT;
     }
 
     #region Getters/Setters
     // HP
-    public float HP
-    {
-        get { return m_HP; }
-        set { m_HP = value; }
-    }
+    public float HP { get; set; }
 
-    public float maxHP
-    {
-        get { return m_maxHP; }
-    }
+    public float maxHP { get; set; } = DEFAULT_STAT;
 
 
     // Stamina
-    public float ST
-    {
-        get { return m_ST; }
-        set { m_ST = value; }
-    }
+    public float ST { get; set; }
 
-    public float maxST
-    {
-        get { return m_maxST; }
-    }
+    public float maxST { get; set; } = DEFAULT_STAT;
 
-    public float minJumpST 
-    {
-        get { return m_minJumpST; }
-    }
+    public float minJumpST { get; set; }
 
-    public float AmmoCount
-    {
-        get { return m_AmmoCount; }
-        set { m_AmmoCount = value; }
-    }
+    public float AmmoCount { get; set; }
 
     #endregion
 }

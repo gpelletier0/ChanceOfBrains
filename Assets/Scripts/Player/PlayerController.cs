@@ -4,6 +4,11 @@
 [RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour, IDamageable
 {
+    [Header("Stats")]
+    [SerializeField] [Range(0, PlayerStats.DEFAULT_STAT)] public float m_HP;
+    [SerializeField] [Range(0, PlayerStats.DEFAULT_STAT)] public float m_ST;
+    [SerializeField] [Range(0, PlayerStats.DEFAULT_STAT)] public float m_MinJumpST;
+
     [Header("Walk/Run")]
     [SerializeField] public float walkSpeed = 2.5f;
     [SerializeField] public float runSpeed = 6f;
@@ -26,7 +31,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     [Header("Weapon")]
     [SerializeField] public M4A1 Wepon;
-    
+
     private Vector3 m_moveDir = Vector3.zero;
     private Vector2 m_rotation = Vector2.zero;
 
@@ -34,32 +39,31 @@ public class PlayerController : MonoBehaviour, IDamageable
     private float m_Horizontal;
     private float m_Jump;
     private bool m_isRunning;
-    private bool m_canMove;
+    private bool m_canMove = true;
 
     private PlayerHUD m_PlayerHUD;
-    private PlayerStats m_PlayerStats = PlayerStats.Instance;
-
     private Animator m_Animator;
     private CharacterController m_CharController;
 
     public bool CanMove
     {
-        get { return m_canMove; }
-        set { m_canMove = value; }
+        get => m_canMove;
+        set => m_canMove = value;
     }
 
     private void Awake()
     {
-        m_canMove = true;
         m_CharController = GetComponent<CharacterController>();
         m_Animator = GetComponent<Animator>();
         m_PlayerHUD = GameObject.Find("PlayerHUD").GetComponent<PlayerHUD>();
-        
     }
 
     private void Start()
     {
-        m_PlayerStats.Initalize(Wepon.m_CurrentAmmo);
+        PlayerStats.Instance.HP = m_HP;
+        PlayerStats.Instance.ST = m_ST;
+        PlayerStats.Instance.minJumpST = m_MinJumpST;
+        PlayerStats.Instance.AmmoCount = Wepon.m_CurrentAmmo;
 
         m_rotation.y = transform.eulerAngles.y;
 
@@ -69,12 +73,16 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        if(jumpTimer <= jumpRate)
+        if(PlayerStats.Instance.HP <=0)
+        {
+            Die();
+        }
+
+        if (jumpTimer <= jumpRate)
             jumpTimer += Time.deltaTime;
 
         if (m_canMove)
         {
-
             if (Input.GetButton("Fire1"))
             {
                 GiveDamage();
@@ -97,13 +105,13 @@ public class PlayerController : MonoBehaviour, IDamageable
                 // Move direction vector
                 m_moveDir = (forward * m_Vertical) + (right * m_Horizontal);
 
-                if (Input.GetButton("Jump") && m_PlayerStats.ST >= m_PlayerStats.minJumpST && jumpTimer >= jumpRate)
+                if (Input.GetButton("Jump") && PlayerStats.Instance.ST >= PlayerStats.Instance.minJumpST && jumpTimer >= jumpRate)
                 {
                     // Jumped
                     m_Animator.SetBool("isJumping", true);
                     m_moveDir.y = jumpSpeed;
                     jumpTimer = 0f;
-                    m_PlayerStats.ST -= jumpStam;
+                    PlayerStats.Instance.ST -= jumpStam;
                 }
 
                 // Set animation
@@ -125,9 +133,9 @@ public class PlayerController : MonoBehaviour, IDamageable
 
             // Stamina Degen/Regen
             if (m_isRunning && (m_moveDir.x != 0 || m_moveDir.z != 0))
-                m_PlayerStats.ST = Mathf.Max(m_PlayerStats.ST - staminaDepletion * Time.deltaTime, 0.0f);
+                PlayerStats.Instance.ST = Mathf.Max(PlayerStats.Instance.ST - staminaDepletion * Time.deltaTime, 0.0f);
             else
-                m_PlayerStats.ST = Mathf.Min(m_PlayerStats.ST + staminaRecovery * Time.deltaTime, m_PlayerStats.maxST);
+                PlayerStats.Instance.ST = Mathf.Min(PlayerStats.Instance.ST + staminaRecovery * Time.deltaTime, PlayerStats.Instance.maxST);
         }
     }
 
@@ -138,27 +146,27 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     private float GetRunSpeed()
     {
-        return Mathf.Lerp(walkSpeed, runSpeed, m_PlayerStats.ST / m_PlayerStats.maxST);
+        return Mathf.Lerp(walkSpeed, runSpeed, PlayerStats.Instance.ST / PlayerStats.Instance.maxST);
     }
 
     public void GiveDamage()
     {
         Wepon.Fire(m_rotation);
-        m_PlayerStats.AmmoCount = Wepon.m_CurrentAmmo;
+        PlayerStats.Instance.AmmoCount = Wepon.m_CurrentAmmo;
     }
 
     public void TakeDamage(float dmg)
     {
-        if(m_PlayerStats.HP > 0)
+        if (PlayerStats.Instance.HP > 0)
         {
             Debug.Log("Player hit for: " + dmg);
-            m_PlayerStats.HP -= dmg;
+            PlayerStats.Instance.HP -= dmg;
         }
     }
 
     public void Die()
     {
-
+        m_canMove = false;
+        m_Animator.SetBool("isDead", true);
     }
-
 }
