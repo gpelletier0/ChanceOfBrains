@@ -32,7 +32,6 @@ public class PlayerHUD : MonoBehaviour
         m_ObjectiveText = GameObject.Find("ObjectiveText").GetComponent<Text>();
         m_ObjectInteractionText = GameObject.Find("ObjectInteractionText").GetComponent<Text>();
         
-        //if(m_FadeImage != null)
         m_FadeImage = GameObject.Find("FadeImage").GetComponent<Image>();
         
         m_ObjectInteractionText.gameObject.SetActive(false);
@@ -47,11 +46,6 @@ public class PlayerHUD : MonoBehaviour
             m_FadeImage.color = color;
 
             Fade(m_TextDisplayTime * 2, eFadeType.IN);
-        }
-
-        if (m_ObjectiveText)
-        {
-            ShowObjectiveText("Destroy all Obelisks!", Color.red);
         }
     }
 

@@ -37,6 +37,8 @@ public class MainScript : MonoBehaviour
     private void Start()
     {
         StartCoroutine(SpawnMoreOverlords());
+
+        m_PlayerHUD.ShowObjectiveText("Destroy all Obelisks", Color.red);
     }
 
     private void Update()
@@ -75,6 +77,8 @@ public class MainScript : MonoBehaviour
         foreach (var go in m_ObeliskList)
         {
             yield return new WaitForSeconds(m_ObeliskSpawnTime);
+
+            m_PlayerHUD.ShowObjectiveText("Obelisk has spawned", Color.red);
             go.SetActive(true);
         }
     }
