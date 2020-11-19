@@ -31,7 +31,7 @@ public class Zombie : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        if (m_EnemyStats.HP <= 0)
+        if (m_EnemyStats.HP <= 0 && !m_Animator.GetBool("isDead"))
             Die();
 
         if (m_Agent.isActiveAndEnabled)
@@ -87,8 +87,6 @@ public class Zombie : MonoBehaviour, IDamageable
 
     public void Die()
     {
-        Debug.Log("Zombie Died");
-
         m_Animator.SetBool("isDead", true);
         m_Agent.enabled = false;
         m_Collider.enabled = false;
@@ -98,6 +96,7 @@ public class Zombie : MonoBehaviour, IDamageable
 
     private IEnumerator DestroyCouroutine()
     {
+        Debug.Log("Zombie Died");
         yield return new WaitForSeconds(m_DestroyTime);
         Destroy(gameObject);
     }
