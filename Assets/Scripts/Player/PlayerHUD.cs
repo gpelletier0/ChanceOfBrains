@@ -32,8 +32,8 @@ public class PlayerHUD : MonoBehaviour
         m_ObjectiveText = GameObject.Find("ObjectiveText").GetComponent<Text>();
         m_ObjectInteractionText = GameObject.Find("ObjectInteractionText").GetComponent<Text>();
         
-        if(m_FadeImage != null)
-            m_FadeImage = GameObject.Find("FadeImage").GetComponent<Image>();
+        //if(m_FadeImage != null)
+        m_FadeImage = GameObject.Find("FadeImage").GetComponent<Image>();
         
         m_ObjectInteractionText.gameObject.SetActive(false);
     }

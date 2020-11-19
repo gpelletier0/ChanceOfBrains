@@ -10,10 +10,14 @@ public class Obelisk : MonoBehaviour, IDamageable
     public float m_ZombieSpawnTime = 10.0f;
     public GameObject[] m_EnemyPrefabs;
 
+    private AudioSource m_AudioSource;
+
     private float RandomSpawnPos() => Random.Range(-3, 3);
 
-    public void Awake()
+    private void Awake()
     {
+        m_AudioSource = GetComponent<AudioSource>();
+
         Vector3 pos = new Vector3(transform.position.x + RandomSpawnPos(), m_EnemyPrefabs[0].transform.position.y, transform.position.z + RandomSpawnPos());
         m_EnemyPrefabs[0] = Instantiate(m_EnemyPrefabs[0], pos, Quaternion.identity);
         m_EnemyPrefabs[0].SetActive(false);
@@ -45,6 +49,7 @@ public class Obelisk : MonoBehaviour, IDamageable
     public void Die()
     {
         Debug.Log("Obelisk Died");
+        m_AudioSource.Stop();
         Destroy(gameObject);
     }
 

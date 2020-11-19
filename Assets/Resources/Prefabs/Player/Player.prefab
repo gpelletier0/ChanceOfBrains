@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9030733769842493639}
   - component: {fileID: 875588845999158623}
   - component: {fileID: 875588845999158620}
+  - component: {fileID: 292605443657973942}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -87,6 +88,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b4adcd747cb144a98949ea8a735bd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_HP: 0
+  m_ST: 0
+  m_MinJumpST: 0
   walkSpeed: 2.5
   runSpeed: 6
   jumpSpeed: 8
@@ -117,7 +121,6 @@ MonoBehaviour:
   m_FireRate: 0.2
   m_Timer: 0
   m_FireSound: {fileID: 875588845999158620}
-  m_BulletPrefab: {fileID: 312348363205584979, guid: 558fc3fca853d1b418cd9ca016108e9b, type: 3}
   m_FirePoint: {fileID: 9030733769094417686}
   m_BulletSpeed: 40
   m_LifeTime: 3
@@ -217,6 +220,14 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!81 &292605443657973942
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875588845999158622}
+  m_Enabled: 1
 --- !u!1 &6113098285609262114
 GameObject:
   m_ObjectHideFlags: 0
@@ -2590,7 +2601,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9030733769109663829}
   - component: {fileID: 9030733770557479186}
-  - component: {fileID: 9030733770557479189}
   - component: {fileID: 9030733770557479188}
   m_Layer: 8
   m_Name: Camera
@@ -2656,14 +2666,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &9030733770557479189
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9030733770557479191}
-  m_Enabled: 1
 --- !u!114 &9030733770557479188
 MonoBehaviour:
   m_ObjectHideFlags: 0
