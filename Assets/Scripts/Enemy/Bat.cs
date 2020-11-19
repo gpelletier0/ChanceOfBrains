@@ -1,8 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Bat : MonoBehaviour, IDamageable
 {
     [SerializeReference] public EnemyStats m_EnemyStats = new EnemyStats(4, 2, 2);
+    [SerializeField] public GameObject m_BatSpit;
+    [SerializeField] public Transform m_FirePoint;
     public float m_MoveSpeed = 3f;
     public float m_RotationSpeed = 5f;
     public float m_AttackDistance = 5f;
@@ -12,11 +15,12 @@ public class Bat : MonoBehaviour, IDamageable
 
     private Transform m_Target;
     private Animation m_Animation;
-    
+    private const string BULLET_PREFAB = "Prefabs/Weapons/Bullet";
 
     private void Awake()
     {
         m_Animation = GetComponent<Animation>();
+        m_EnemyStats.DamageTimer = m_EnemyStats.AttackSpeed;
     }
 
     private void Start()
@@ -40,8 +44,7 @@ public class Bat : MonoBehaviour, IDamageable
 
         if (distance <= m_AttackDistance && m_EnemyStats.DamageTimer <= 0)
             GiveDamage();
-
-        if (m_EnemyStats.DamageTimer > 0)
+        else
             m_EnemyStats.DamageTimer -= Time.deltaTime;
 
     }
@@ -73,6 +76,10 @@ public class Bat : MonoBehaviour, IDamageable
 
     public void GiveDamage()
     {
+        GameObject batspit = Instantiate(m_BatSpit, m_FirePoint.position, Quaternion.identity);
+        batspit.GetComponent<BatSpit>().m_Target = m_Target;
+        batspit.GetComponent<BatSpit>().m_Dammage = m_EnemyStats.Damage;
+        
         m_EnemyStats.DamageTimer = m_EnemyStats.AttackSpeed;
     }
 }
