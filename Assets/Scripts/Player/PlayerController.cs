@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         PlayerStats.Instance.HP = m_HP;
         PlayerStats.Instance.ST = m_ST;
         PlayerStats.Instance.MinJumpST = m_MinJumpST;
-        PlayerStats.Instance.AmmoCount = Wepon.m_CurrentAmmo;
+        PlayerStats.Instance.AmmoCount = Wepon.m_StartAmmo;
 
         m_rotation.y = transform.eulerAngles.y;
 
@@ -151,8 +151,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void GiveDamage()
     {
-        Wepon.Fire(m_rotation);
-        PlayerStats.Instance.AmmoCount = Wepon.m_CurrentAmmo;
+        Wepon.Fire();
     }
 
     public void TakeDamage(float dmg)

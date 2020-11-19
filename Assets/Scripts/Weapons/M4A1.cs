@@ -3,92 +3,75 @@ using UnityEngine;
 
 public class M4A1 : MonoBehaviour
 {
-    private const int MAX_AMMO = 100;
     private const string BULLET_PREFAB = "Prefabs/Weapons/Bullet";
 
     [Header("Gun Stats")]
-    public int m_CurrentAmmo = MAX_AMMO;
+    public int m_StartAmmo = 100;
     public int m_Dammage = 1;
-    //public int m_Range = 50;
-    public float m_FireRate = 0.2f;
-    public float m_Timer;
+    public float m_FireRate = 0.25f;
+    public float m_Range = 50f;
+    public Transform m_FirePoint;
     public AudioSource m_FireSound;
+    
+    private float m_Timer;
+    private LineRenderer m_BulletLine;
 
-    [Header("Bullet")]
-    [SerializeField] public Transform m_FirePoint;
-    [SerializeField] public float m_BulletSpeed = 40;
-    [SerializeField] public float m_LifeTime = 3;
+    private void Start()
+    {
+        m_BulletLine = GetComponent<LineRenderer>();
+        m_BulletLine.enabled = false;
+    }
 
-    private GameObject m_PreviousBullet;
     private void Update()
     {
         if(m_Timer < m_FireRate)
             m_Timer += Time.deltaTime;
     }
 
-    public void Fire(Vector3 rot)
+    public void Fire()
     {
         if (m_Timer >= m_FireRate)
         {
             m_Timer = 0f;
 
-            if (m_CurrentAmmo > 0)
+            if (PlayerStats.Instance.AmmoCount > 0)
             {
-                /*****************************************************************************************
-                 * Bullet object Code
-                ******************************************************************************************/
-                GameObject bullet = Instantiate(Resources.Load<GameObject>(BULLET_PREFAB));
-                //GameObject bullet = ObjectPooler.GetObject(BULLET_PREFAB_PATH);
+                StartCoroutine(ShotEffect());
 
-                bullet.GetComponent<Bullet>().Dammage = m_Dammage;
-                bullet.SetActive(true);
-
-                // Ignore previous bullet collider
-                if (m_PreviousBullet != null)
-                    Physics.IgnoreCollision(bullet.GetComponent<Collider>(), m_PreviousBullet.GetComponent<Collider>());
-                m_PreviousBullet = bullet;
-
-                // Bullet position and rotation
-                bullet.transform.position = m_FirePoint.position;
-                bullet.transform.rotation = Quaternion.Euler(new Vector3(90, 0, 0).x + rot.x, transform.eulerAngles.y, 0);
+                Vector3 ray = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
+                RaycastHit hit;
+                m_BulletLine.SetPosition(0, m_FirePoint.position);
                 
-                // Move bullet
-                bullet.GetComponent<Rigidbody>().AddForce(Quaternion.Euler(rot.x, rot.y, 0) * Vector3.forward * m_BulletSpeed, ForceMode.Impulse);
-
-                // Destroy bullet after lifetime
-                StartCoroutine(DestroyBullet(bullet, m_LifeTime));
-
-                // Muzzle Flash Particles
-                m_FireSound.Play();
-
-                /*****************************************************************************************
-                 * Raycast Code
-                ******************************************************************************************/
-                //Ray ray = Camera.main.ViewportPointToRay(Vector3.one * 0.5f);
-                //Debug.DrawRay(ray.origin, ray.direction * m_Range, Color.red, 2f);
-                //RaycastHit hitInfo;
-
-                //if (Physics.Raycast(ray, out hitInfo, m_Range))
-                //{
-                //    if (hitInfo.collider.tag.Equals("Enemy"))
-                //    {
-                //        IDamageable enemy = hitInfo.collider.GetComponent<IDamageable>();
-                //        if (enemy != null)
-                //        {
-                //            enemy.TakeDamage(m_Dammage);
-                //        }
-                //    }
-                //}
-
-                m_CurrentAmmo--;
+                if (Physics.Raycast(ray, Camera.main.transform.forward, out hit, m_Range, ~LayerMask.GetMask("Player")))
+                {
+                    m_BulletLine.SetPosition(1, hit.point);
+                    if (hit.collider.GetComponent<IDamageable>() != null)
+                        hit.collider.GetComponent<IDamageable>().TakeDamage(m_Dammage);
+                }
+                else
+                {
+                    m_BulletLine.SetPosition(1, ray + (Camera.main.transform.forward * m_Range));
+                }
             }
         }
     }
 
-    private IEnumerator DestroyBullet(GameObject bullet, float delay)
+    private IEnumerator ShotEffect()
     {
-        yield return new WaitForSeconds(delay);
-        Destroy(bullet);
-        //bullet.SetActive(false);
+        // Reduce player ammo
+        PlayerStats.Instance.AmmoCount--;
+
+        // Play the shooting sound
+        m_FireSound.Play();
+        
+        // Muzzle Flash Particles
+
+        // Show bullet line
+        m_BulletLine.enabled = true;
+
+        yield return new WaitForSeconds(0.07f);
+
+        // Hide bullet line
+        m_BulletLine.enabled = false;
     }
 }
