@@ -3,8 +3,6 @@ using UnityEngine;
 
 public static class ObjectPooler
 {
-    #region Attributes
-
     private const int DEFAULT_SIZE = 10;
     private const bool m_bExpand = true;
     private static readonly Dictionary<string, List<GameObject>> m_ObjectPools = new Dictionary<string, List<GameObject>>();
