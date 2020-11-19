@@ -14,7 +14,6 @@ public class Zombie : MonoBehaviour, IDamageable
     private Animator m_Animator;
     private Transform m_Target;
 
-
     private void Awake()
     {
         m_navMeshPath = new NavMeshPath();
@@ -48,7 +47,8 @@ public class Zombie : MonoBehaviour, IDamageable
 
             if (m_Animator.GetBool("isAttacking"))
             {
-                transform.LookAt(m_Target);
+                Quaternion rotation = Quaternion.LookRotation(m_Target.position - transform.position);
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
 
                 if (m_EnemyStats.DamageTimer <= 0)
                     GiveDamage();

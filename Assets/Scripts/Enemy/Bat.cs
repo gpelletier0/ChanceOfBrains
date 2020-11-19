@@ -26,8 +26,7 @@ public class Bat : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        Vector3 lookPos = transform.position - m_Target.position;
-        Quaternion rotation = Quaternion.LookRotation(lookPos);
+        Quaternion rotation = Quaternion.LookRotation(transform.position - m_Target.position);
         rotation *= Quaternion.Euler(m_RotationAdjustX, 0, 0);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
         
