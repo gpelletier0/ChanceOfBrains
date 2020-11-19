@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class M4A1 : MonoBehaviour
 {
-    private const string BULLET_PREFAB = "Prefabs/Weapons/Bullet";
-
     [Header("Gun Stats")]
     public int m_StartAmmo = 100;
     public int m_Dammage = 1;
@@ -63,8 +61,9 @@ public class M4A1 : MonoBehaviour
 
         // Play the shooting sound
         m_FireSound.Play();
-        
+
         // Muzzle Flash Particles
+        m_FirePoint.GetComponentInChildren<ParticleSystem>().Play();
 
         // Show bullet line
         m_BulletLine.enabled = true;
