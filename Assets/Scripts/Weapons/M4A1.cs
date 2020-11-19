@@ -80,7 +80,7 @@ public class M4A1 : MonoBehaviour
                 //    }
                 //}
 
-                //m_CurrentAmmo--;
+                m_CurrentAmmo--;
             }
         }
     }

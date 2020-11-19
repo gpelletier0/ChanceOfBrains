@@ -1126,8 +1126,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4582259076846078244}
   - component: {fileID: 4582259076846078243}
-  - component: {fileID: 4582259076846078242}
   - component: {fileID: 4582259076846078241}
+  - component: {fileID: 4582259076846078242}
   m_Layer: 10
   m_Name: VampireBat
   m_TagString: Enemy
@@ -1174,24 +1174,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 1
   m_CullingType: 1
---- !u!114 &4582259076846078242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4582259076846078240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae7acb7fa26afaf4ba222a5e4dd9a40f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MoveSpeed: 3
-  m_RotationSpeed: 5
-  m_AttackDistance: 5
-  m_AggroDistance: 20
-  m_GroundDistace: 3
-  m_RotationAdjustX: 40
 --- !u!136 &4582259076846078241
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1206,6 +1188,39 @@ CapsuleCollider:
   m_Height: 1.8
   m_Direction: 2
   m_Center: {x: 0, y: 0.5, z: 0.5933181}
+--- !u!114 &4582259076846078242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4582259076846078240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7acb7fa26afaf4ba222a5e4dd9a40f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EnemyStats:
+    id: 0
+  m_MoveSpeed: 3
+  m_RotationSpeed: 5
+  m_AttackDistance: 5
+  m_AggroDistance: 20
+  m_GroundDistace: 3
+  m_RotationAdjustX: 40
+  references:
+    version: 1
+    00000000:
+      type: {class: EnemyStats, ns: , asm: Assembly-CSharp}
+      data:
+        m_HP: 4
+        m_Damage: 2
+        m_AttackSpeed: 2
+        m_MoveSpeed: 0
+        m_RotationSpeed: 0
+        m_AttackDistance: 0
+        m_AggroDistance: 0
+        m_DammageTimer: 4
 --- !u!1 &4582259076878184023
 GameObject:
   m_ObjectHideFlags: 0

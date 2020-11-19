@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         PlayerStats.Instance.HP = m_HP;
         PlayerStats.Instance.ST = m_ST;
-        PlayerStats.Instance.minJumpST = m_MinJumpST;
+        PlayerStats.Instance.MinJumpST = m_MinJumpST;
         PlayerStats.Instance.AmmoCount = Wepon.m_CurrentAmmo;
 
         m_rotation.y = transform.eulerAngles.y;
@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour, IDamageable
                 // Move direction vector
                 m_moveDir = (forward * m_Vertical) + (right * m_Horizontal);
 
-                if (Input.GetButton("Jump") && PlayerStats.Instance.ST >= PlayerStats.Instance.minJumpST && jumpTimer >= jumpRate)
+                if (Input.GetButton("Jump") && PlayerStats.Instance.ST >= PlayerStats.Instance.MinJumpST && jumpTimer >= jumpRate)
                 {
                     // Jumped
                     m_Animator.SetBool("isJumping", true);
@@ -135,7 +135,7 @@ public class PlayerController : MonoBehaviour, IDamageable
             if (m_isRunning && (m_moveDir.x != 0 || m_moveDir.z != 0))
                 PlayerStats.Instance.ST = Mathf.Max(PlayerStats.Instance.ST - staminaDepletion * Time.deltaTime, 0.0f);
             else
-                PlayerStats.Instance.ST = Mathf.Min(PlayerStats.Instance.ST + staminaRecovery * Time.deltaTime, PlayerStats.Instance.maxST);
+                PlayerStats.Instance.ST = Mathf.Min(PlayerStats.Instance.ST + staminaRecovery * Time.deltaTime, PlayerStats.Instance.MaxST);
         }
     }
 
@@ -146,7 +146,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     private float GetRunSpeed()
     {
-        return Mathf.Lerp(walkSpeed, runSpeed, PlayerStats.Instance.ST / PlayerStats.Instance.maxST);
+        return Mathf.Lerp(walkSpeed, runSpeed, PlayerStats.Instance.ST / PlayerStats.Instance.MaxST);
     }
 
     public void GiveDamage()

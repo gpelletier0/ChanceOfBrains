@@ -25,13 +25,13 @@ public class PlayerStats
     #endregion
 
 
-    public void Defaults(float ammoCount)
+    public void Defaults()
     {
         HP = DEFAULT_STAT;
-        maxHP = DEFAULT_STAT;
+        MaxHP = DEFAULT_STAT;
         ST= DEFAULT_STAT;
-        maxST= DEFAULT_STAT;
-        minJumpST = 0;
+        MaxST= DEFAULT_STAT;
+        MinJumpST = 0;
         AmmoCount = DEFAULT_STAT;
     }
 
@@ -39,15 +39,15 @@ public class PlayerStats
     // HP
     public float HP { get; set; }
 
-    public float maxHP { get; set; } = DEFAULT_STAT;
+    public float MaxHP { get; set; } = DEFAULT_STAT;
 
 
     // Stamina
     public float ST { get; set; }
 
-    public float maxST { get; set; } = DEFAULT_STAT;
+    public float MaxST { get; set; } = DEFAULT_STAT;
 
-    public float minJumpST { get; set; }
+    public float MinJumpST { get; set; }
 
     public float AmmoCount { get; set; }
 

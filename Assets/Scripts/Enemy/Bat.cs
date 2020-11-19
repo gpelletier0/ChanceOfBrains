@@ -2,8 +2,8 @@
 
 public class Bat : MonoBehaviour, IDamageable
 {
+    [SerializeReference] public EnemyStats m_EnemyStats = new EnemyStats(4, 2, 2);
     public float m_MoveSpeed = 3f;
-    //public float m_AttackSpeed = 6f;
     public float m_RotationSpeed = 5f;
     public float m_AttackDistance = 5f;
     public float m_AggroDistance = 20f;
@@ -12,7 +12,7 @@ public class Bat : MonoBehaviour, IDamageable
 
     private Transform m_Target;
     private Animation m_Animation;
-    private EnemyStats m_EnemyStats = new EnemyStats(4);
+    
 
     private void Awake()
     {
@@ -31,16 +31,18 @@ public class Bat : MonoBehaviour, IDamageable
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
         
         float distance = Vector3.Distance(m_Target.position, transform.position);
+        
         if (distance < m_AggroDistance && distance >= m_AttackDistance)
         {
             Vector3 flyTargetPos = new Vector3(m_Target.position.x, m_Target.position.y + m_GroundDistace, m_Target.position.z);
             transform.position = Vector3.MoveTowards(transform.position, flyTargetPos, m_MoveSpeed * Time.deltaTime);
         }
 
-        //if (distance <= m_AttackDistance)
-        //    m_Animation.Play("Attack");
-        //else
-        //    m_Animation.Play("FlyCycle");
+        if (distance <= m_AttackDistance && m_EnemyStats.DamageTimer <= 0)
+            GiveDamage();
+
+        if (m_EnemyStats.DamageTimer > 0)
+            m_EnemyStats.DamageTimer -= Time.deltaTime;
 
     }
 
@@ -56,11 +58,11 @@ public class Bat : MonoBehaviour, IDamageable
             Debug.Log("Bat is hit for: " + dmg);
             m_EnemyStats.HP -= dmg;
         }
-
-        if (m_EnemyStats.HP <= 0)
+        else
         {
             Die();
         }
+
     }
 
     public void Die()
@@ -71,6 +73,6 @@ public class Bat : MonoBehaviour, IDamageable
 
     public void GiveDamage()
     {
-
+        m_EnemyStats.DamageTimer = m_EnemyStats.AttackSpeed;
     }
 }
