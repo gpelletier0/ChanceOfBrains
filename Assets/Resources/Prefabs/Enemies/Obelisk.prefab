@@ -649,7 +649,7 @@ MonoBehaviour:
   m_VampireBatSpawnTime: 2
   m_ZombieSpawnTime: 10
   m_EnemyPrefabs:
-  - {fileID: 4582259076846078240, guid: 805b62198df759444a4410df61edce1c, type: 3}
+  - {fileID: 122084, guid: 3747a42421e662b4381ea051221a53c9, type: 3}
   - {fileID: 3668228555784350164, guid: 714cac75a094a9d469427b93645d8538, type: 3}
   m_PickupDrops:
   - {fileID: 1410293670906794219, guid: 733c2703057d393469410c9a28346a58, type: 3}

@@ -2,19 +2,24 @@
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(CapsuleCollider))]
+
 public class Zombie : MonoBehaviour, IDamageable
 {
     [SerializeReference] private EnemyStats m_EnemyStats = new EnemyStats(2, 1, 1);
     public float m_AggroDistance = 20f;
     public float m_AttackDistance = 1f;
     public float m_DestroyTime = 5f;
+
     
     private NavMeshPath m_navMeshPath;
     private NavMeshAgent m_Agent;
     private Animator m_Animator;
     private Collider m_Collider;
-    private Transform m_Target;
-
+    private Transform m_Player;
+    [HideInInspector] public Transform m_Obelisk;
 
     private void Awake()
     {
@@ -26,7 +31,7 @@ public class Zombie : MonoBehaviour, IDamageable
 
     private void Start()
     {
-        m_Target = GameObject.FindGameObjectWithTag("Player").transform;
+        m_Player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Update()
@@ -36,15 +41,20 @@ public class Zombie : MonoBehaviour, IDamageable
 
         if (m_Agent.isActiveAndEnabled)
         {
-            float distance = Vector3.Distance(m_Target.position, transform.position);
+            float distance = Vector3.Distance(m_Player.position, transform.position);
             
             if (distance < m_AggroDistance)
             {
-                m_Agent.CalculatePath(m_Target.position, m_navMeshPath);
+                m_Agent.CalculatePath(m_Player.position, m_navMeshPath);
+                
                 if (m_navMeshPath.status == NavMeshPathStatus.PathComplete)
                 {
-                    m_Agent.SetDestination(m_Target.position);
+                    m_Agent.SetDestination(m_Player.position);
                 }
+            }
+            else
+            {
+                m_Agent.SetDestination(m_Obelisk.position);
             }
 
             m_Animator.SetBool("isAttacking", distance < m_AttackDistance ? true : false);
@@ -52,7 +62,7 @@ public class Zombie : MonoBehaviour, IDamageable
 
             if (m_Animator.GetBool("isAttacking"))
             {
-                Quaternion rotation = Quaternion.LookRotation(m_Target.position - transform.position);
+                Quaternion rotation = Quaternion.LookRotation(m_Player.position - transform.position);
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
 
                 if (m_EnemyStats.DamageTimer <= 0)
@@ -62,10 +72,6 @@ public class Zombie : MonoBehaviour, IDamageable
             if (m_EnemyStats.DamageTimer > 0)
                 m_EnemyStats.DamageTimer -= Time.deltaTime;
         }
-    }
-
-    private void ReturnToObelisk()
-    {
     }
 
     public void TakeDamage(float dmg)
@@ -81,7 +87,6 @@ public class Zombie : MonoBehaviour, IDamageable
     {
         m_EnemyStats.DamageTimer = m_EnemyStats.AttackSpeed;
         Debug.Log("Zombie hits for: " + m_EnemyStats.Damage);
-        //GameObject.Find("Player").GetComponent<PlayerController>().TakeDamage(m_EnemyStats.Damage);
         PlayerStats.Instance.HP -= m_EnemyStats.Damage;
     }
 
@@ -91,10 +96,10 @@ public class Zombie : MonoBehaviour, IDamageable
         m_Agent.enabled = false;
         m_Collider.enabled = false;
         
-        StartCoroutine(DestroyCouroutine());
+        StartCoroutine(Despawn());
     }
 
-    private IEnumerator DestroyCouroutine()
+    private IEnumerator Despawn()
     {
         Debug.Log("Zombie Died");
         yield return new WaitForSeconds(m_DestroyTime);

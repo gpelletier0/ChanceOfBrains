@@ -1,0 +1,1619 @@
+fileFormatVersion: 2
+guid: a47e003f3f1b3824c895da8cae4de76c
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: bat wings
+    100002: bat_base
+    100004: bat_bones07
+    100006: bat_bones08
+    100008: bat_bones09
+    100010: bat_bones10
+    100012: bat_bones14
+    100014: bat_control27
+    100016: bat_ear(LEFT)00
+    100018: bat_ear(LEFT)01
+    100020: bat_ear(RIGHT)00
+    100022: bat_ear(RIGHT)01
+    100024: bat_end(RIGHT)00
+    100026: bat_end(RIGHT)01
+    100028: bat_end(RIGHT)02
+    100030: bat_end(RIGHT)03
+    100032: bat_end(RIGHT)04
+    100034: bat_end(RIGHT)05
+    100036: bat_end(RIGHT)06
+    100038: bat_end(RIGHT)07
+    100040: bat_end(RIGHT)08
+    100042: bat_end(RIGHT)09
+    100044: bat_end(RIGHT)10
+    100046: bat_end(RIGHT)11
+    100048: bat_end(RIGHT)12
+    100050: bat_end(RIGHT)13
+    100052: bat_end(RIGHT)14
+    100054: bat_end(RIGHT)15
+    100056: bat_end(RIGHT)16
+    100058: bat_foot(LEFT)
+    100060: bat_foot(RIGHT)
+    100062: bat_head
+    100064: bat_leg(LEFT)00
+    100066: bat_leg(LEFT)01
+    100068: bat_leg(LEFT)02
+    100070: bat_leg(LEFT)03
+    100072: bat_leg(RIGHT)00
+    100074: bat_leg(RIGHT)01
+    100076: bat_leg(RIGHT)02
+    100078: bat_leg(RIGHT)03
+    100080: bat_mandible
+    100082: bat_neck
+    100084: bat_tail00
+    100086: bat_tail01
+    100088: bat_tail02
+    100090: bat_tail03
+    100092: bat_tail04
+    100094: bat_wing(LEFT)00
+    100096: bat_wing(LEFT)01
+    100098: bat_wing(LEFT)02
+    100100: bat_wing(LEFT)03
+    100102: bat_wing(LEFT)04
+    100104: bat_wing(LEFT)06
+    100106: bat_wing(LEFT)07
+    100108: bat_wing(LEFT)09
+    100110: bat_wing(LEFT)10
+    100112: bat_wing(LEFT)12
+    100114: bat_wing(LEFT)13
+    100116: bat_wing(LEFT)15
+    100118: bat_wing(LEFT)16
+    100120: bat_wing(RIGHT)00
+    100122: bat_wing(RIGHT)01
+    100124: bat_wing(RIGHT)02
+    100126: bat_wing(RIGHT)03
+    100128: bat_wing(RIGHT)04
+    100130: bat_wing(RIGHT)06
+    100132: bat_wing(RIGHT)07
+    100134: bat_wing(RIGHT)09
+    100136: bat_wing(RIGHT)10
+    100138: bat_wing(RIGHT)12
+    100140: bat_wing(RIGHT)13
+    100142: bat_wing(RIGHT)15
+    100144: bat_wing(RIGHT)16
+    100146: Vampire_bat_mesh
+    100148: //RootNode
+    100150: bat_control00
+    100152: bat_control01
+    100154: bat_control02
+    100156: bat_control03
+    100158: bat_control04
+    100160: bat_control05
+    100162: bat_control06
+    100164: bat_control07
+    100166: bat_control08
+    100168: bat_control09
+    100170: bat_control10
+    100172: bat_control11
+    100174: bat_control12
+    100176: bat_control13
+    100178: bat_control14
+    100180: bat_control15
+    100182: bat_control16
+    100184: bat_control17
+    100186: bat_control18
+    100188: bat_control19
+    100190: bat_control20
+    100192: bat_control21
+    100194: bat_control22
+    100196: bat_control23
+    100198: bat_control24
+    100200: bat_control25
+    100202: bat_control26
+    100204: GeoSphere01
+    100206: GeoSphere02
+    100208: IK Chain01
+    100210: IK Chain02
+    100212: IK Chain03
+    100214: IK Chain04
+    100216: IK Chain05
+    100218: IK Chain06
+    100220: IK Chain07
+    100222: IK Chain08
+    100224: IK Chain09
+    100226: IK Chain10
+    100228: IK Chain11
+    100230: IK Chain12
+    100232: IK Chain13
+    100234: IK Chain14
+    100236: IK Chain15
+    100238: IK Chain16
+    100240: IK Chain17
+    100242: IK Chain18
+    100244: IK Chain19
+    100246: IK Chain20
+    100248: IK Chain21
+    100250: IK Chain22
+    100252: IK Chain23
+    100254: IK Chain24
+    100256: IK Chain25
+    100258: IK Chain26
+    100260: IK Chain27
+    100262: IK Chain28
+    100264: IK Chain29
+    100266: IK Chain30
+    100268: IK Chain31
+    100270: IK Chain32
+    100272: IK Chain33
+    100274: IK Chain34
+    100276: IK Chain35
+    100278: IK Chain36
+    100280: IK Chain37
+    100282: IK Chain38
+    100284: IK Chain39
+    100286: IK Chain40
+    100288: IK Chain41
+    100290: IK Chain42
+    100292: IK Chain43
+    100294: IK Chain44
+    100296: IK Chain45
+    100298: IK Chain46
+    100300: IK Chain47
+    100302: IK Chain48
+    400000: bat wings
+    400002: bat_base
+    400004: bat_bones07
+    400006: bat_bones08
+    400008: bat_bones09
+    400010: bat_bones10
+    400012: bat_bones14
+    400014: bat_control27
+    400016: bat_ear(LEFT)00
+    400018: bat_ear(LEFT)01
+    400020: bat_ear(RIGHT)00
+    400022: bat_ear(RIGHT)01
+    400024: bat_end(RIGHT)00
+    400026: bat_end(RIGHT)01
+    400028: bat_end(RIGHT)02
+    400030: bat_end(RIGHT)03
+    400032: bat_end(RIGHT)04
+    400034: bat_end(RIGHT)05
+    400036: bat_end(RIGHT)06
+    400038: bat_end(RIGHT)07
+    400040: bat_end(RIGHT)08
+    400042: bat_end(RIGHT)09
+    400044: bat_end(RIGHT)10
+    400046: bat_end(RIGHT)11
+    400048: bat_end(RIGHT)12
+    400050: bat_end(RIGHT)13
+    400052: bat_end(RIGHT)14
+    400054: bat_end(RIGHT)15
+    400056: bat_end(RIGHT)16
+    400058: bat_foot(LEFT)
+    400060: bat_foot(RIGHT)
+    400062: bat_head
+    400064: bat_leg(LEFT)00
+    400066: bat_leg(LEFT)01
+    400068: bat_leg(LEFT)02
+    400070: bat_leg(LEFT)03
+    400072: bat_leg(RIGHT)00
+    400074: bat_leg(RIGHT)01
+    400076: bat_leg(RIGHT)02
+    400078: bat_leg(RIGHT)03
+    400080: bat_mandible
+    400082: bat_neck
+    400084: bat_tail00
+    400086: bat_tail01
+    400088: bat_tail02
+    400090: bat_tail03
+    400092: bat_tail04
+    400094: bat_wing(LEFT)00
+    400096: bat_wing(LEFT)01
+    400098: bat_wing(LEFT)02
+    400100: bat_wing(LEFT)03
+    400102: bat_wing(LEFT)04
+    400104: bat_wing(LEFT)06
+    400106: bat_wing(LEFT)07
+    400108: bat_wing(LEFT)09
+    400110: bat_wing(LEFT)10
+    400112: bat_wing(LEFT)12
+    400114: bat_wing(LEFT)13
+    400116: bat_wing(LEFT)15
+    400118: bat_wing(LEFT)16
+    400120: bat_wing(RIGHT)00
+    400122: bat_wing(RIGHT)01
+    400124: bat_wing(RIGHT)02
+    400126: bat_wing(RIGHT)03
+    400128: bat_wing(RIGHT)04
+    400130: bat_wing(RIGHT)06
+    400132: bat_wing(RIGHT)07
+    400134: bat_wing(RIGHT)09
+    400136: bat_wing(RIGHT)10
+    400138: bat_wing(RIGHT)12
+    400140: bat_wing(RIGHT)13
+    400142: bat_wing(RIGHT)15
+    400144: bat_wing(RIGHT)16
+    400146: Vampire_bat_mesh
+    400148: //RootNode
+    400150: bat_control00
+    400152: bat_control01
+    400154: bat_control02
+    400156: bat_control03
+    400158: bat_control04
+    400160: bat_control05
+    400162: bat_control06
+    400164: bat_control07
+    400166: bat_control08
+    400168: bat_control09
+    400170: bat_control10
+    400172: bat_control11
+    400174: bat_control12
+    400176: bat_control13
+    400178: bat_control14
+    400180: bat_control15
+    400182: bat_control16
+    400184: bat_control17
+    400186: bat_control18
+    400188: bat_control19
+    400190: bat_control20
+    400192: bat_control21
+    400194: bat_control22
+    400196: bat_control23
+    400198: bat_control24
+    400200: bat_control25
+    400202: bat_control26
+    400204: GeoSphere01
+    400206: GeoSphere02
+    400208: IK Chain01
+    400210: IK Chain02
+    400212: IK Chain03
+    400214: IK Chain04
+    400216: IK Chain05
+    400218: IK Chain06
+    400220: IK Chain07
+    400222: IK Chain08
+    400224: IK Chain09
+    400226: IK Chain10
+    400228: IK Chain11
+    400230: IK Chain12
+    400232: IK Chain13
+    400234: IK Chain14
+    400236: IK Chain15
+    400238: IK Chain16
+    400240: IK Chain17
+    400242: IK Chain18
+    400244: IK Chain19
+    400246: IK Chain20
+    400248: IK Chain21
+    400250: IK Chain22
+    400252: IK Chain23
+    400254: IK Chain24
+    400256: IK Chain25
+    400258: IK Chain26
+    400260: IK Chain27
+    400262: IK Chain28
+    400264: IK Chain29
+    400266: IK Chain30
+    400268: IK Chain31
+    400270: IK Chain32
+    400272: IK Chain33
+    400274: IK Chain34
+    400276: IK Chain35
+    400278: IK Chain36
+    400280: IK Chain37
+    400282: IK Chain38
+    400284: IK Chain39
+    400286: IK Chain40
+    400288: IK Chain41
+    400290: IK Chain42
+    400292: IK Chain43
+    400294: IK Chain44
+    400296: IK Chain45
+    400298: IK Chain46
+    400300: IK Chain47
+    400302: IK Chain48
+    2300000: GeoSphere01
+    2300002: GeoSphere02
+    3300000: GeoSphere01
+    3300002: GeoSphere02
+    4300000: Vampire_bat_mesh
+    4300002: bat wings
+    4300004: GeoSphere01
+    4300006: GeoSphere02
+    7400000: StandToIdle
+    7400002: Idle
+    7400004: Idle01
+    7400006: FlyStart
+    7400008: FlyCycle
+    7400010: Attack
+    7400012: GetDamage
+    7400014: Die
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: bat wings
+    13700002: Vampire_bat_mesh
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 2
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 0
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: StandToIdle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 75
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bat_control27
+        weight: 1
+      - path: bat_control27/bat wings
+        weight: 1
+      - path: bat_control27/bat_base
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_bones14
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_bones14/bat_mandible
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_bones14/bat_mandible/bat_end(RIGHT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(LEFT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(LEFT)00/bat_ear(LEFT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(LEFT)00/bat_ear(LEFT)01/bat_end(RIGHT)16
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(RIGHT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(RIGHT)00/bat_ear(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(RIGHT)00/bat_ear(RIGHT)01/bat_end(RIGHT)15
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_head
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_head/bat_end(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)03/bat_wing(LEFT)04
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)03/bat_wing(LEFT)04/bat_end(RIGHT)08
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)06
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)06/bat_wing(LEFT)07
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)06/bat_wing(LEFT)07/bat_end(RIGHT)09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)09/bat_wing(LEFT)10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)09/bat_wing(LEFT)10/bat_end(RIGHT)10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)12
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)12/bat_wing(LEFT)13
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)12/bat_wing(LEFT)13/bat_end(RIGHT)11
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)15
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)15/bat_wing(LEFT)16
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)15/bat_wing(LEFT)16/bat_end(RIGHT)12
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)03/bat_wing(RIGHT)04
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)03/bat_wing(RIGHT)04/bat_end(RIGHT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)06
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)06/bat_wing(RIGHT)07
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)06/bat_wing(RIGHT)07/bat_end(RIGHT)04
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)09/bat_wing(RIGHT)10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)09/bat_wing(RIGHT)10/bat_end(RIGHT)05
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)12
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)12/bat_wing(RIGHT)13
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)12/bat_wing(RIGHT)13/bat_end(RIGHT)06
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)15
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)15/bat_wing(RIGHT)16
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)15/bat_wing(RIGHT)16/bat_end(RIGHT)07
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02/bat_leg(LEFT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02/bat_leg(LEFT)03/bat_foot(LEFT)
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02/bat_leg(LEFT)03/bat_foot(LEFT)/bat_end(RIGHT)13
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02/bat_leg(RIGHT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02/bat_leg(RIGHT)03/bat_foot(RIGHT)
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02/bat_leg(RIGHT)03/bat_foot(RIGHT)/bat_end(RIGHT)14
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02/bat_tail03
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02/bat_tail03/bat_tail04
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02/bat_tail03/bat_tail04/bat_end(RIGHT)00
+        weight: 1
+      - path: Vampire_bat_mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 75
+      lastFrame: 375
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bat wings
+        weight: 1
+      - path: bat_control27
+        weight: 1
+      - path: bat_control27/bat_base
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_bones14
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_bones14/bat_mandible
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_bones14/bat_mandible/bat_end(RIGHT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(LEFT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(LEFT)00/bat_ear(LEFT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(LEFT)00/bat_ear(LEFT)01/bat_end(RIGHT)16
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(RIGHT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(RIGHT)00/bat_ear(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(RIGHT)00/bat_ear(RIGHT)01/bat_end(RIGHT)15
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_head
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_head/bat_end(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)03/bat_wing(LEFT)04
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)03/bat_wing(LEFT)04/bat_end(RIGHT)08
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)06
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)06/bat_wing(LEFT)07
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)06/bat_wing(LEFT)07/bat_end(RIGHT)09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)09/bat_wing(LEFT)10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)09/bat_wing(LEFT)10/bat_end(RIGHT)10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)12
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)12/bat_wing(LEFT)13
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)12/bat_wing(LEFT)13/bat_end(RIGHT)11
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)15
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)15/bat_wing(LEFT)16
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)15/bat_wing(LEFT)16/bat_end(RIGHT)12
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)03/bat_wing(RIGHT)04
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)03/bat_wing(RIGHT)04/bat_end(RIGHT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)06
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)06/bat_wing(RIGHT)07
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)06/bat_wing(RIGHT)07/bat_end(RIGHT)04
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)09/bat_wing(RIGHT)10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)09/bat_wing(RIGHT)10/bat_end(RIGHT)05
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)12
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)12/bat_wing(RIGHT)13
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)12/bat_wing(RIGHT)13/bat_end(RIGHT)06
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)15
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)15/bat_wing(RIGHT)16
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)15/bat_wing(RIGHT)16/bat_end(RIGHT)07
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02/bat_leg(LEFT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02/bat_leg(LEFT)03/bat_foot(LEFT)
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02/bat_leg(LEFT)03/bat_foot(LEFT)/bat_end(RIGHT)13
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02/bat_leg(RIGHT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02/bat_leg(RIGHT)03/bat_foot(RIGHT)
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02/bat_leg(RIGHT)03/bat_foot(RIGHT)/bat_end(RIGHT)14
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02/bat_tail03
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02/bat_tail03/bat_tail04
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02/bat_tail03/bat_tail04/bat_end(RIGHT)00
+        weight: 1
+      - path: Vampire_bat_mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: FlyStart
+      takeName: Take 001
+      firstFrame: 375
+      lastFrame: 450
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bat wings
+        weight: 1
+      - path: bat_control27
+        weight: 1
+      - path: bat_control27/bat_base
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_bones14
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_bones14/bat_mandible
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_bones14/bat_mandible/bat_end(RIGHT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(LEFT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(LEFT)00/bat_ear(LEFT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(LEFT)00/bat_ear(LEFT)01/bat_end(RIGHT)16
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(RIGHT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(RIGHT)00/bat_ear(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(RIGHT)00/bat_ear(RIGHT)01/bat_end(RIGHT)15
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_head
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_head/bat_end(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)03/bat_wing(LEFT)04
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)03/bat_wing(LEFT)04/bat_end(RIGHT)08
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)06
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)06/bat_wing(LEFT)07
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)06/bat_wing(LEFT)07/bat_end(RIGHT)09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)09/bat_wing(LEFT)10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)09/bat_wing(LEFT)10/bat_end(RIGHT)10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)12
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)12/bat_wing(LEFT)13
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)12/bat_wing(LEFT)13/bat_end(RIGHT)11
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)15
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)15/bat_wing(LEFT)16
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)15/bat_wing(LEFT)16/bat_end(RIGHT)12
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)03/bat_wing(RIGHT)04
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)03/bat_wing(RIGHT)04/bat_end(RIGHT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)06
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)06/bat_wing(RIGHT)07
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)06/bat_wing(RIGHT)07/bat_end(RIGHT)04
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)09/bat_wing(RIGHT)10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)09/bat_wing(RIGHT)10/bat_end(RIGHT)05
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)12
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)12/bat_wing(RIGHT)13
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)12/bat_wing(RIGHT)13/bat_end(RIGHT)06
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)15
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)15/bat_wing(RIGHT)16
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)15/bat_wing(RIGHT)16/bat_end(RIGHT)07
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02/bat_leg(LEFT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02/bat_leg(LEFT)03/bat_foot(LEFT)
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02/bat_leg(LEFT)03/bat_foot(LEFT)/bat_end(RIGHT)13
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02/bat_leg(RIGHT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02/bat_leg(RIGHT)03/bat_foot(RIGHT)
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02/bat_leg(RIGHT)03/bat_foot(RIGHT)/bat_end(RIGHT)14
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02/bat_tail03
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02/bat_tail03/bat_tail04
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02/bat_tail03/bat_tail04/bat_end(RIGHT)00
+        weight: 1
+      - path: Vampire_bat_mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: FlyCycle
+      takeName: Take 001
+      firstFrame: 450
+      lastFrame: 489
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bat wings
+        weight: 1
+      - path: bat_control27
+        weight: 1
+      - path: bat_control27/bat_base
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_bones14
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_bones14/bat_mandible
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_bones14/bat_mandible/bat_end(RIGHT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(LEFT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(LEFT)00/bat_ear(LEFT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(LEFT)00/bat_ear(LEFT)01/bat_end(RIGHT)16
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(RIGHT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(RIGHT)00/bat_ear(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(RIGHT)00/bat_ear(RIGHT)01/bat_end(RIGHT)15
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_head
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_head/bat_end(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)03/bat_wing(LEFT)04
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)03/bat_wing(LEFT)04/bat_end(RIGHT)08
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)06
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)06/bat_wing(LEFT)07
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)06/bat_wing(LEFT)07/bat_end(RIGHT)09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)09/bat_wing(LEFT)10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)09/bat_wing(LEFT)10/bat_end(RIGHT)10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)12
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)12/bat_wing(LEFT)13
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)12/bat_wing(LEFT)13/bat_end(RIGHT)11
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)15
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)15/bat_wing(LEFT)16
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)15/bat_wing(LEFT)16/bat_end(RIGHT)12
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)03/bat_wing(RIGHT)04
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)03/bat_wing(RIGHT)04/bat_end(RIGHT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)06
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)06/bat_wing(RIGHT)07
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)06/bat_wing(RIGHT)07/bat_end(RIGHT)04
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)09/bat_wing(RIGHT)10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)09/bat_wing(RIGHT)10/bat_end(RIGHT)05
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)12
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)12/bat_wing(RIGHT)13
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)12/bat_wing(RIGHT)13/bat_end(RIGHT)06
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)15
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)15/bat_wing(RIGHT)16
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)15/bat_wing(RIGHT)16/bat_end(RIGHT)07
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02/bat_leg(LEFT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02/bat_leg(LEFT)03/bat_foot(LEFT)
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02/bat_leg(LEFT)03/bat_foot(LEFT)/bat_end(RIGHT)13
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02/bat_leg(RIGHT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02/bat_leg(RIGHT)03/bat_foot(RIGHT)
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02/bat_leg(RIGHT)03/bat_foot(RIGHT)/bat_end(RIGHT)14
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02/bat_tail03
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02/bat_tail03/bat_tail04
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02/bat_tail03/bat_tail04/bat_end(RIGHT)00
+        weight: 1
+      - path: Vampire_bat_mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Attack
+      takeName: Take 001
+      firstFrame: 490
+      lastFrame: 530
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bat wings
+        weight: 1
+      - path: bat_control27
+        weight: 1
+      - path: bat_control27/bat_base
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_bones14
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_bones14/bat_mandible
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_bones14/bat_mandible/bat_end(RIGHT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(LEFT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(LEFT)00/bat_ear(LEFT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(LEFT)00/bat_ear(LEFT)01/bat_end(RIGHT)16
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(RIGHT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(RIGHT)00/bat_ear(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(RIGHT)00/bat_ear(RIGHT)01/bat_end(RIGHT)15
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_head
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_head/bat_end(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)03/bat_wing(LEFT)04
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)03/bat_wing(LEFT)04/bat_end(RIGHT)08
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)06
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)06/bat_wing(LEFT)07
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)06/bat_wing(LEFT)07/bat_end(RIGHT)09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)09/bat_wing(LEFT)10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)09/bat_wing(LEFT)10/bat_end(RIGHT)10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)12
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)12/bat_wing(LEFT)13
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)12/bat_wing(LEFT)13/bat_end(RIGHT)11
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)15
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)15/bat_wing(LEFT)16
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)15/bat_wing(LEFT)16/bat_end(RIGHT)12
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)03/bat_wing(RIGHT)04
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)03/bat_wing(RIGHT)04/bat_end(RIGHT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)06
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)06/bat_wing(RIGHT)07
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)06/bat_wing(RIGHT)07/bat_end(RIGHT)04
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)09/bat_wing(RIGHT)10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)09/bat_wing(RIGHT)10/bat_end(RIGHT)05
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)12
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)12/bat_wing(RIGHT)13
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)12/bat_wing(RIGHT)13/bat_end(RIGHT)06
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)15
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)15/bat_wing(RIGHT)16
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)15/bat_wing(RIGHT)16/bat_end(RIGHT)07
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02/bat_leg(LEFT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02/bat_leg(LEFT)03/bat_foot(LEFT)
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02/bat_leg(LEFT)03/bat_foot(LEFT)/bat_end(RIGHT)13
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02/bat_leg(RIGHT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02/bat_leg(RIGHT)03/bat_foot(RIGHT)
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02/bat_leg(RIGHT)03/bat_foot(RIGHT)/bat_end(RIGHT)14
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02/bat_tail03
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02/bat_tail03/bat_tail04
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02/bat_tail03/bat_tail04/bat_end(RIGHT)00
+        weight: 1
+      - path: Vampire_bat_mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: GetDamage
+      takeName: Take 001
+      firstFrame: 530
+      lastFrame: 550
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bat wings
+        weight: 1
+      - path: bat_control27
+        weight: 1
+      - path: bat_control27/bat_base
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_bones14
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_bones14/bat_mandible
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_bones14/bat_mandible/bat_end(RIGHT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(LEFT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(LEFT)00/bat_ear(LEFT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(LEFT)00/bat_ear(LEFT)01/bat_end(RIGHT)16
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(RIGHT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(RIGHT)00/bat_ear(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(RIGHT)00/bat_ear(RIGHT)01/bat_end(RIGHT)15
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_head
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_head/bat_end(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)03/bat_wing(LEFT)04
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)03/bat_wing(LEFT)04/bat_end(RIGHT)08
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)06
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)06/bat_wing(LEFT)07
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)06/bat_wing(LEFT)07/bat_end(RIGHT)09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)09/bat_wing(LEFT)10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)09/bat_wing(LEFT)10/bat_end(RIGHT)10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)12
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)12/bat_wing(LEFT)13
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)12/bat_wing(LEFT)13/bat_end(RIGHT)11
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)15
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)15/bat_wing(LEFT)16
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)15/bat_wing(LEFT)16/bat_end(RIGHT)12
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)03/bat_wing(RIGHT)04
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)03/bat_wing(RIGHT)04/bat_end(RIGHT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)06
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)06/bat_wing(RIGHT)07
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)06/bat_wing(RIGHT)07/bat_end(RIGHT)04
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)09/bat_wing(RIGHT)10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)09/bat_wing(RIGHT)10/bat_end(RIGHT)05
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)12
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)12/bat_wing(RIGHT)13
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)12/bat_wing(RIGHT)13/bat_end(RIGHT)06
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)15
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)15/bat_wing(RIGHT)16
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)15/bat_wing(RIGHT)16/bat_end(RIGHT)07
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02/bat_leg(LEFT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02/bat_leg(LEFT)03/bat_foot(LEFT)
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02/bat_leg(LEFT)03/bat_foot(LEFT)/bat_end(RIGHT)13
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02/bat_leg(RIGHT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02/bat_leg(RIGHT)03/bat_foot(RIGHT)
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02/bat_leg(RIGHT)03/bat_foot(RIGHT)/bat_end(RIGHT)14
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02/bat_tail03
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02/bat_tail03/bat_tail04
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02/bat_tail03/bat_tail04/bat_end(RIGHT)00
+        weight: 1
+      - path: Vampire_bat_mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Die
+      takeName: Take 001
+      firstFrame: 550
+      lastFrame: 590.000061
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bat wings
+        weight: 1
+      - path: bat_control27
+        weight: 1
+      - path: bat_control27/bat_base
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_bones14
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_bones14/bat_mandible
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_bones14/bat_mandible/bat_end(RIGHT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(LEFT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(LEFT)00/bat_ear(LEFT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(LEFT)00/bat_ear(LEFT)01/bat_end(RIGHT)16
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(RIGHT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(RIGHT)00/bat_ear(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_ear(RIGHT)00/bat_ear(RIGHT)01/bat_end(RIGHT)15
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_head
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_bones10/bat_neck/bat_head/bat_end(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)03/bat_wing(LEFT)04
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)03/bat_wing(LEFT)04/bat_end(RIGHT)08
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)06
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)06/bat_wing(LEFT)07
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)06/bat_wing(LEFT)07/bat_end(RIGHT)09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)09/bat_wing(LEFT)10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)09/bat_wing(LEFT)10/bat_end(RIGHT)10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)12
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)12/bat_wing(LEFT)13
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)12/bat_wing(LEFT)13/bat_end(RIGHT)11
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)15
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)15/bat_wing(LEFT)16
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(LEFT)00/bat_wing(LEFT)01/bat_wing(LEFT)02/bat_wing(LEFT)15/bat_wing(LEFT)16/bat_end(RIGHT)12
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)03/bat_wing(RIGHT)04
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)03/bat_wing(RIGHT)04/bat_end(RIGHT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)06
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)06/bat_wing(RIGHT)07
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)06/bat_wing(RIGHT)07/bat_end(RIGHT)04
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)09
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)09/bat_wing(RIGHT)10
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)09/bat_wing(RIGHT)10/bat_end(RIGHT)05
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)12
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)12/bat_wing(RIGHT)13
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)12/bat_wing(RIGHT)13/bat_end(RIGHT)06
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)15
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)15/bat_wing(RIGHT)16
+        weight: 1
+      - path: bat_control27/bat_base/bat_bones07/bat_bones08/bat_bones09/bat_wing(RIGHT)00/bat_wing(RIGHT)01/bat_wing(RIGHT)02/bat_wing(RIGHT)15/bat_wing(RIGHT)16/bat_end(RIGHT)07
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02/bat_leg(LEFT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02/bat_leg(LEFT)03/bat_foot(LEFT)
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(LEFT)00/bat_leg(LEFT)01/bat_leg(LEFT)02/bat_leg(LEFT)03/bat_foot(LEFT)/bat_end(RIGHT)13
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02/bat_leg(RIGHT)03
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02/bat_leg(RIGHT)03/bat_foot(RIGHT)
+        weight: 1
+      - path: bat_control27/bat_base/bat_leg(RIGHT)00/bat_leg(RIGHT)01/bat_leg(RIGHT)02/bat_leg(RIGHT)03/bat_foot(RIGHT)/bat_end(RIGHT)14
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02/bat_tail03
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02/bat_tail03/bat_tail04
+        weight: 1
+      - path: bat_control27/bat_base/bat_tail00/bat_tail01/bat_tail02/bat_tail03/bat_tail04/bat_end(RIGHT)00
+        weight: 1
+      - path: Vampire_bat_mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: bat_control27
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

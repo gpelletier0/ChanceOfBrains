@@ -11,7 +11,7 @@ public class BatSpit : MonoBehaviour
     private Rigidbody m_Rb;
     private Vector3 m_MoveDir;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         m_Rb = GetComponent<Rigidbody>();

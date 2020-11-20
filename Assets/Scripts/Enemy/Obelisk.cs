@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider))]
+
 public class Obelisk : MonoBehaviour, IDamageable
 {
     [SerializeReference] public EnemyStats m_EnemyStats = new EnemyStats(10);
@@ -22,6 +24,7 @@ public class Obelisk : MonoBehaviour, IDamageable
         Vector3 pos = new Vector3(transform.position.x + RandomSpawnPos(), m_EnemyPrefabs[0].transform.position.y, transform.position.z + RandomSpawnPos());
         m_EnemyPrefabs[0] = Instantiate(m_EnemyPrefabs[0], pos, Quaternion.identity);
         m_EnemyPrefabs[0].SetActive(false);
+        m_EnemyPrefabs[0].GetComponent<VampireBat>().m_Obelisk = transform;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -29,8 +32,10 @@ public class Obelisk : MonoBehaviour, IDamageable
         if (other.gameObject.layer == LayerMask.NameToLayer("Roads"))
         {
             GetComponent<BoxCollider>().isTrigger = false;
+            transform.position = new Vector3(transform.position.x, other.transform.position.y, transform.position.z);
+            
             StartCoroutine(SpawnEnemy());
-        }   
+        }
     }
 
     public void TakeDamage(float dmg)
@@ -71,9 +76,10 @@ public class Obelisk : MonoBehaviour, IDamageable
         {
             yield return new WaitForSeconds(m_ZombieSpawnTime);
             
-            Debug.Log("Spawn Enemy");
+            Debug.Log("Obelisk Spawns Zombie");
             Vector3 pos = new Vector3(transform.position.x + RandomSpawnPos(), 0, transform.position.z + RandomSpawnPos());
-            Instantiate(m_EnemyPrefabs[1], pos, Quaternion.identity);
+            GameObject z = Instantiate(m_EnemyPrefabs[1], pos, Quaternion.identity);
+            z.GetComponent<Zombie>().m_Obelisk = transform;
         }
     }
 }
