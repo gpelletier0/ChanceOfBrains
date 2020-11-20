@@ -16,6 +16,8 @@ public class HealthPack : MonoBehaviour
 
         if (other.name.Equals("Player"))
         {
+            PlayerHUD.Instance.SetObjectInteractionText("Picked up Health Pack");
+
             if (PlayerStats.Instance.HP + m_Health <= PlayerStats.Instance.MaxHP)
                 PlayerStats.Instance.HP += m_Health;
             else

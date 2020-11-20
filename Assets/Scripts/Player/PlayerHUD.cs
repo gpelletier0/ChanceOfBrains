@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public enum eFadeType { IN, OUT }
 
-public class PlayerHUD : MonoBehaviour
+public class PlayerHUD : Singleton<PlayerHUD>
 {
     public float m_TextDisplayTime = 4.0f;
 
@@ -16,14 +16,11 @@ public class PlayerHUD : MonoBehaviour
     private Text m_ObjectInteractionText;
     private Image m_FadeImage;
 
-    // Player Stats
-    private PlayerStats m_PlayerStats = PlayerStats.Instance;
-
     // Fade
     private float m_FadeAlpha = 1.0f;
     private IEnumerator m_FadeCoroutine;
 
-    private void Awake()
+    protected override void Awake()
     {
         m_crosshair = GameObject.Find("Crosshair");
         m_HPPct = GameObject.Find("HPPct").GetComponent<Text>();
@@ -31,10 +28,7 @@ public class PlayerHUD : MonoBehaviour
         m_AmmoCount = GameObject.Find("AmmoCount").GetComponent<Text>();
         m_ObjectiveText = GameObject.Find("ObjectiveText").GetComponent<Text>();
         m_ObjectInteractionText = GameObject.Find("ObjectInteractionText").GetComponent<Text>();
-        
         m_FadeImage = GameObject.Find("FadeImage").GetComponent<Image>();
-        
-        m_ObjectInteractionText.gameObject.SetActive(false);
     }
 
     private void Start()
@@ -96,14 +90,14 @@ public class PlayerHUD : MonoBehaviour
 
     public void UpdateStats()
     {
-        if (m_PlayerStats != null)
+        if (PlayerStats.Instance != null)
         {
             if (m_HPPct)
-                m_HPPct.text = ((int)m_PlayerStats.HP).ToString();
+                m_HPPct.text = ((int)PlayerStats.Instance.HP).ToString();
             if (m_STPct)
-                m_STPct.text = ((int)m_PlayerStats.ST).ToString();
+                m_STPct.text = ((int)PlayerStats.Instance.ST).ToString();
             if (m_AmmoCount)
-                m_AmmoCount.text = ((int)m_PlayerStats.AmmoCount).ToString();
+                m_AmmoCount.text = ((int)PlayerStats.Instance.AmmoCount).ToString();
         }
     }
 
@@ -116,6 +110,8 @@ public class PlayerHUD : MonoBehaviour
 
             m_ObjectInteractionText.gameObject.SetActive(true);
         }
+
+        Invoke("HideObjectInteractionText", m_TextDisplayTime);
     }
 
     public void HideObjectInteractionText()

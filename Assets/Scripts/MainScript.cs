@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MainScript : MonoBehaviour
 {
-    [Header("HUD")]
-    public PlayerHUD m_PlayerHUD;
-
     [Header("Player")]
     public PlayerController m_PlayerController;
 
@@ -38,7 +34,7 @@ public class MainScript : MonoBehaviour
     {
         StartCoroutine(SpawnMoreOverlords());
 
-        m_PlayerHUD.ShowObjectiveText("Destroy all Obelisks", Color.red);
+        PlayerHUD.Instance.ShowObjectiveText("Destroy all Obelisks", Color.red);
     }
 
     private void Update()
@@ -47,15 +43,17 @@ public class MainScript : MonoBehaviour
         {
             if (PlayerStats.Instance.HP <= 0)
             {
-                m_PlayerHUD.ShowObjectiveText("YOU DIED", Color.red);
-                m_PlayerHUD.Fade(2, eFadeType.OUT);
+                PlayerHUD.Instance.ShowObjectiveText("YOU DIED", Color.red);
+                PlayerHUD.Instance.Fade(2, eFadeType.OUT);
+
                 StartCoroutine(Pause());
             }
             else if (AreAllObelisksDead())
             {
                 m_PlayerController.CanMove = false;
-                m_PlayerHUD.ShowObjectiveText("YOU WIN", Color.red);
-                m_PlayerHUD.Fade(2, eFadeType.OUT);
+                PlayerHUD.Instance.ShowObjectiveText("YOU WIN", Color.red);
+                PlayerHUD.Instance.Fade(2, eFadeType.OUT);
+
                 StartCoroutine(Pause());
             }
         }
@@ -78,7 +76,7 @@ public class MainScript : MonoBehaviour
         {
             yield return new WaitForSeconds(m_ObeliskSpawnTime);
 
-            m_PlayerHUD.ShowObjectiveText("Obelisk has spawned", Color.red);
+            PlayerHUD.Instance.ShowObjectiveText("Obelisk has spawned", Color.red);
             go.SetActive(true);
         }
     }
@@ -86,7 +84,7 @@ public class MainScript : MonoBehaviour
     public IEnumerator Pause()
     {
         m_EndGame = true;
-        yield return new WaitForSeconds(m_PlayerHUD.m_TextDisplayTime);
+        yield return new WaitForSeconds(PlayerHUD.Instance.m_TextDisplayTime);
         Time.timeScale = 0;
     }
 }

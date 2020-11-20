@@ -15,6 +15,8 @@ public class AmmoPack : MonoBehaviour
         }
         if(other.name.Equals("Player"))
         {
+            PlayerHUD.Instance.SetObjectInteractionText("Picked up Ammo");
+
             PlayerStats.Instance.AmmoCount += m_Ammo;
             Destroy(gameObject);
         }

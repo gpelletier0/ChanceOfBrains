@@ -2,6 +2,7 @@
 
 [RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(Animator))]
+
 public class PlayerController : MonoBehaviour, IDamageable
 {
     [Header("Stats")]
