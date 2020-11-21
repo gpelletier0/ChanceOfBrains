@@ -3,7 +3,7 @@
 [RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(Animator))]
 
-public class PlayerController : MonoBehaviour, IDamageable
+public class PlayerController : Singleton<PlayerController>, IDamageable
 {
     [Header("Stats")]
     [SerializeField] [Range(0, PlayerStats.DEFAULT_STAT)] public float m_HP;
@@ -46,13 +46,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     private Animator m_Animator;
     private CharacterController m_CharController;
 
-    public bool CanMove
-    {
-        get => m_canMove;
-        set => m_canMove = value;
-    }
-
-    private void Awake()
+    protected override void Awake()
     {
         m_CharController = GetComponent<CharacterController>();
         m_Animator = GetComponent<Animator>();
@@ -67,9 +61,6 @@ public class PlayerController : MonoBehaviour, IDamageable
         PlayerStats.Instance.AmmoCount = Wepon.m_StartAmmo;
 
         m_rotation.y = transform.eulerAngles.y;
-
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     private void Update()
