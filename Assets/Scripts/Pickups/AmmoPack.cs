@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider))]
+[RequireComponent(typeof(Rigidbody))]
+
 public class AmmoPack : MonoBehaviour
 {
     [SerializeField] public int m_Ammo = 50;
@@ -11,14 +14,20 @@ public class AmmoPack : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Roads"))
         {
             GetComponent<Rigidbody>().isKinematic = true;
-            transform.position = new Vector3(transform.position.x, other.transform.position.y + 0.3f, transform.position.z);
+            transform.position = new Vector3(transform.position.x, other.transform.position.y + 0.2f, transform.position.z);
         }
-        if(other.name.Equals("Player"))
+
+        if (other.gameObject.CompareTag("Player"))
         {
             PlayerHUD.Instance.SetObjectInteractionText("Picked up Ammo");
 
             PlayerStats.Instance.AmmoCount += m_Ammo;
             Destroy(gameObject);
         }
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        
     }
 }

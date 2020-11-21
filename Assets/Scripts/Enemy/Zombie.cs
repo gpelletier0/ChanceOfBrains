@@ -52,7 +52,7 @@ public class Zombie : MonoBehaviour, IDamageable
                     m_Agent.SetDestination(m_Player.position);
                 }
             }
-            else
+            else if (m_Obelisk != null)
             {
                 m_Agent.SetDestination(m_Obelisk.position);
             }

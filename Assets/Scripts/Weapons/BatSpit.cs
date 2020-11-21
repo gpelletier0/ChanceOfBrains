@@ -5,7 +5,7 @@ using UnityEngine;
 public class BatSpit : MonoBehaviour
 {
     public float m_Speed = 4f;
-    public Transform m_Target;
+    public Vector3 m_Target;
     public float m_Dammage;
 
     private Rigidbody m_Rb;
@@ -15,7 +15,7 @@ public class BatSpit : MonoBehaviour
     void Start()
     {
         m_Rb = GetComponent<Rigidbody>();
-        m_MoveDir = (m_Target.position - transform.position).normalized * m_Speed;
+        m_MoveDir = (m_Target - transform.position).normalized * m_Speed;
         m_Rb.velocity = m_MoveDir;
 
         Destroy(gameObject, m_Speed);

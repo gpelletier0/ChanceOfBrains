@@ -45,17 +45,22 @@ public class VampireBat : MonoBehaviour, IDamageable
                 if (distance <= m_AttackDistance && m_EnemyStats.DamageTimer <= 0)
                     GiveDamage();
             }
-            else
-                m_Target = m_Target = m_Obelisk;
-
-            Quaternion rotation = Quaternion.LookRotation(transform.position - m_Target.position);
-            rotation *= Quaternion.Euler(m_RotationAdjustX, 0, 0);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
-            
-            if (distance >= m_AttackDistance)
+            else if (m_Obelisk != null)
             {
-                Vector3 flyTargetPos = new Vector3(m_Target.position.x, m_Target.position.y + m_GroundDistace, m_Target.position.z);
-                transform.position = Vector3.MoveTowards(transform.position, flyTargetPos, m_MoveSpeed * Time.deltaTime);
+                m_Target = m_Target = m_Obelisk;
+            }
+            
+            if(m_Target != null)
+            {
+                Quaternion rotation = Quaternion.LookRotation(transform.position - m_Target.position);
+                rotation *= Quaternion.Euler(m_RotationAdjustX, 0, 0);
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
+
+                if (distance >= m_AttackDistance)
+                {
+                    Vector3 flyTargetPos = new Vector3(m_Target.position.x, m_Target.position.y + m_GroundDistace, m_Target.position.z);
+                    transform.position = Vector3.MoveTowards(transform.position, flyTargetPos, m_MoveSpeed * Time.deltaTime);
+                }
             }
 
             if(m_EnemyStats.DamageTimer > 0)
@@ -89,7 +94,7 @@ public class VampireBat : MonoBehaviour, IDamageable
         StartCoroutine(AttackAnimation());
 
         GameObject batspit = Instantiate(m_BatSpit, m_FirePoint.position, Quaternion.identity);
-        batspit.GetComponent<BatSpit>().m_Target = m_Player;
+        batspit.GetComponent<BatSpit>().m_Target = new Vector3(m_Player.position.x, m_Player.position.y + 1f, m_Player.position.z);
         batspit.GetComponent<BatSpit>().m_Dammage = m_EnemyStats.Damage;
         
         m_EnemyStats.DamageTimer = m_EnemyStats.AttackSpeed;
