@@ -9,24 +9,32 @@ public class Obelisk : MonoBehaviour, IDamageable
     [SerializeReference] public EnemyStats m_EnemyStats = new EnemyStats(10);
     public float m_VampireBatSpawnTime = 2.0f;
     public float m_ZombieSpawnTime = 10.0f;
+    public float m_NbVampireBats;
+
     public List<GameObject> m_EnemyPrefabs;
     public List<GameObject> m_PickupDrops;
-    public GameObject m_Bat;
-    private AudioSource m_AudioSource;
 
+    private List<GameObject> m_VampireBatList = new List<GameObject>();
+    private AudioSource m_AudioSource;
+    
 
     private float RandomSpawnPos() => Random.Range(-3, 3);
 
     private void Awake()
     {
-        name = name + Random.Range(0, 100).ToString();
+        name += Random.Range(0, 100).ToString();
 
         m_AudioSource = GetComponent<AudioSource>();
 
-        Vector3 pos = new Vector3(transform.position.x + RandomSpawnPos(), m_EnemyPrefabs[0].transform.position.y, transform.position.z + RandomSpawnPos());
-        m_Bat = Instantiate(m_EnemyPrefabs[0], pos, Quaternion.identity);
-        m_Bat.SetActive(false);
-        m_Bat.GetComponent<VampireBat>().m_Obelisk = transform;
+        for(int i = 0; i < m_NbVampireBats; i++)
+        {
+            Vector3 pos = new Vector3(transform.position.x + RandomSpawnPos(), m_EnemyPrefabs[0].transform.position.y, transform.position.z + RandomSpawnPos());
+            GameObject go = Instantiate(m_EnemyPrefabs[0], pos, Quaternion.identity);
+            go.SetActive(false);
+            go.GetComponent<VampireBat>().m_Obelisk = transform;
+            
+            m_VampireBatList.Add(go);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -59,7 +67,7 @@ public class Obelisk : MonoBehaviour, IDamageable
     public void Die()
     {
         Debug.Log("Obelisk Died");
-        m_AudioSource.Stop();
+
         Destroy(gameObject);
 
         Debug.Log("Obelisk Drops Pickups");
@@ -73,14 +81,17 @@ public class Obelisk : MonoBehaviour, IDamageable
     private IEnumerator SpawnEnemy()
     {
         yield return new WaitForSeconds(m_VampireBatSpawnTime);
-        Debug.Log("Obelisk Spawns VampireBat");
-        m_Bat.SetActive(true);
+
+        Debug.Log($"{name} Spawns VampireBat(s)");
+        foreach (var vb in m_VampireBatList)
+            vb.SetActive(true);
 
         while (true)
         {
             yield return new WaitForSeconds(m_ZombieSpawnTime);
             
             Debug.Log($"{name} Spawns Zombie");
+
             Vector3 pos = new Vector3(transform.position.x + RandomSpawnPos(), 0, transform.position.z + RandomSpawnPos());
             GameObject z = Instantiate(m_EnemyPrefabs[1], pos, Quaternion.identity);
             z.GetComponent<Zombie>().m_Obelisk = transform;

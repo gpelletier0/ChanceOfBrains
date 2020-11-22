@@ -40,11 +40,22 @@ public class PlayerController : Singleton<PlayerController>, IDamageable
     private float m_Horizontal;
     private float m_Jump;
     private bool m_isRunning;
-    private bool m_canMove = true;
 
     private PlayerHUD m_PlayerHUD;
     private Animator m_Animator;
     private CharacterController m_CharController;
+
+
+    public bool CanMove {get; set;}
+
+    public void Initialize()
+    {
+        CanMove = true;
+        PlayerStats.Instance.HP = m_HP;
+        PlayerStats.Instance.ST = m_ST;
+        PlayerStats.Instance.MinJumpST = m_MinJumpST;
+        PlayerStats.Instance.AmmoCount = Wepon.m_StartAmmo;
+    }
 
     protected override void Awake()
     {
@@ -55,6 +66,7 @@ public class PlayerController : Singleton<PlayerController>, IDamageable
 
     private void Start()
     {
+        CanMove = true;
         PlayerStats.Instance.HP = m_HP;
         PlayerStats.Instance.ST = m_ST;
         PlayerStats.Instance.MinJumpST = m_MinJumpST;
@@ -73,7 +85,7 @@ public class PlayerController : Singleton<PlayerController>, IDamageable
         if (jumpTimer <= jumpRate)
             jumpTimer += Time.deltaTime;
 
-        if (m_canMove)
+        if (CanMove)
         {
             if (Input.GetButton("Fire1"))
             {
@@ -157,7 +169,6 @@ public class PlayerController : Singleton<PlayerController>, IDamageable
 
     public void Die()
     {
-        m_canMove = false;
         m_Animator.SetBool("isDead", true);
     }
 }

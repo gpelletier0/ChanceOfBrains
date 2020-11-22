@@ -1,13 +1,15 @@
-﻿using TMPro;
+﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoader : MonoBehaviour
+public class SceneLoader : Singleton<SceneLoader>
 {
     public GameObject m_GameOverCanvas;
     TextMeshProUGUI m_DisplayText;
 
-    private void Awake()
+
+    protected override void Awake()
     {
         m_DisplayText = m_GameOverCanvas.GetComponentInChildren<TextMeshProUGUI>();
     }
