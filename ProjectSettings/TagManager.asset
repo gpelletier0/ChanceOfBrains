@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Spawnable
+  - SupplyDrop
   layers:
   - Default
   - TransparentFX

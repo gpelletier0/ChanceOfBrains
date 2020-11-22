@@ -14,13 +14,14 @@ public class VampireBat : MonoBehaviour, IDamageable
     public float m_AggroDistance = 20f;
     public float m_GroundDistace = 3f;
     public float m_RotationAdjustX = 40f;
-    
+
     private bool isAlive = true;
     private Animation m_Animation;
     private Transform m_Player;
+
     [HideInInspector] public Transform m_Obelisk;
     private Transform m_Target;
-    
+
     private void Awake()
     {
         m_Animation = GetComponent<Animation>();
@@ -45,10 +46,10 @@ public class VampireBat : MonoBehaviour, IDamageable
                 if (distance <= m_AttackDistance && m_EnemyStats.DamageTimer <= 0)
                     GiveDamage();
             }
-            else if (m_Obelisk != null)
-            {
-                m_Target = m_Target = m_Obelisk;
-            }
+            //else if (m_Obelisk != null)
+            //{
+            //    m_Target = m_Obelisk;
+            //}
             
             if(m_Target != null)
             {
@@ -103,14 +104,18 @@ public class VampireBat : MonoBehaviour, IDamageable
     private IEnumerator AttackAnimation()
     {
         m_Animation.Play("Attack");
+        
         yield return new WaitForSeconds(1.5f);
+        
         m_Animation.Play("FlyCycle");
     }
 
     private IEnumerator DamageAnimation()
     {
         m_Animation.Play("GetDamage");
+        
         yield return new WaitForSeconds(0.5f);
+        
         m_Animation.Play("FlyCycle");
     }
 
@@ -118,7 +123,9 @@ public class VampireBat : MonoBehaviour, IDamageable
     {
         Debug.Log("Bat Died");
         m_Animation.Play("Die");
+        
         yield return new WaitForSeconds(1.5f);
+        
         Destroy(gameObject);
     }
 }

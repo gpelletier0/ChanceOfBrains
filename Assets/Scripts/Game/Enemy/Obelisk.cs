@@ -9,30 +9,36 @@ public class Obelisk : MonoBehaviour, IDamageable
     [SerializeReference] public EnemyStats m_EnemyStats = new EnemyStats(10);
     public float m_VampireBatSpawnTime = 2.0f;
     public float m_ZombieSpawnTime = 10.0f;
-    public float m_NbVampireBats;
+    public float m_NbVampireBats = 1;
 
     public List<GameObject> m_EnemyPrefabs;
     public List<GameObject> m_PickupDrops;
 
     private List<GameObject> m_VampireBatList = new List<GameObject>();
     private AudioSource m_AudioSource;
-    
 
-    private float RandomSpawnPos() => Random.Range(-3, 3);
+
+    private float RandomSpawnPos() => Random.Range(-3f, 3f);
 
     private void Awake()
     {
         name += Random.Range(0, 100).ToString();
 
+        if (GameSettings.Instance.NbVampireBats > 0)
+            m_NbVampireBats = GameSettings.Instance.NbVampireBats;
+
         m_AudioSource = GetComponent<AudioSource>();
 
         for(int i = 0; i < m_NbVampireBats; i++)
         {
-            Vector3 pos = new Vector3(transform.position.x + RandomSpawnPos(), m_EnemyPrefabs[0].transform.position.y, transform.position.z + RandomSpawnPos());
+            Vector3 pos = new Vector3(transform.position.x + RandomSpawnPos(),
+                                      m_EnemyPrefabs[0].transform.position.y,
+                                      transform.position.z + RandomSpawnPos());
+
             GameObject go = Instantiate(m_EnemyPrefabs[0], pos, Quaternion.identity);
             go.SetActive(false);
             go.GetComponent<VampireBat>().m_Obelisk = transform;
-            
+
             m_VampireBatList.Add(go);
         }
     }
@@ -44,7 +50,14 @@ public class Obelisk : MonoBehaviour, IDamageable
             GetComponent<BoxCollider>().isTrigger = false;
             GetComponent<Rigidbody>().isKinematic = true;
             transform.position = new Vector3(transform.position.x, other.transform.position.y, transform.position.z);
-            
+
+            foreach (var vb in m_VampireBatList)
+            {
+                vb.transform.position = new Vector3(vb.transform.position.x,
+                                                    vb.transform.position.y + transform.position.y,
+                                                    transform.position.z);
+            }
+
             StartCoroutine(SpawnEnemy());
         }
     }
@@ -80,19 +93,31 @@ public class Obelisk : MonoBehaviour, IDamageable
 
     private IEnumerator SpawnEnemy()
     {
-        yield return new WaitForSeconds(m_VampireBatSpawnTime);
+        float timer = 0f;
+        while (timer < m_VampireBatSpawnTime)
+        {
+            timer += Time.deltaTime;
+            yield return null;
+        }
 
-        Debug.Log($"{name} Spawns VampireBat(s)");
         foreach (var vb in m_VampireBatList)
+        {
+            Debug.Log($"{name} Spawns VampireBat");
             vb.SetActive(true);
-
+        }
+        
         while (true)
         {
-            yield return new WaitForSeconds(m_ZombieSpawnTime);
-            
+            timer = 0f;
+            while (timer < m_ZombieSpawnTime)
+            {
+                timer += Time.deltaTime;
+                yield return null;
+            }
+
             Debug.Log($"{name} Spawns Zombie");
 
-            Vector3 pos = new Vector3(transform.position.x + RandomSpawnPos(), 0, transform.position.z + RandomSpawnPos());
+            Vector3 pos = new Vector3(transform.position.x + RandomSpawnPos(), 0f, transform.position.z + RandomSpawnPos());
             GameObject z = Instantiate(m_EnemyPrefabs[1], pos, Quaternion.identity);
             z.GetComponent<Zombie>().m_Obelisk = transform;
         }

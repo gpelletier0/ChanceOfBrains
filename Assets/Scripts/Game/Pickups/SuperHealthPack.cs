@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthPack : MonoBehaviour
+public class SuperHealthPack : MonoBehaviour
 {
-    [SerializeField] public int m_Health = 50;
+    [SerializeField] public int m_Health = 100;
 
     void OnTriggerEnter(Collider other)
     {
@@ -16,13 +16,8 @@ public class HealthPack : MonoBehaviour
 
         if (other.name.Equals("Player"))
         {
-            PlayerHUD.Instance.SetObjectInteractionText("Picked up Health Pack");
-
-            if (PlayerStats.Instance.HP + m_Health <= PlayerStats.Instance.MaxHP)
-                PlayerStats.Instance.HP += m_Health;
-            else if(PlayerStats.Instance.HP < PlayerStats.Instance.MaxHP)
-                PlayerStats.Instance.HP = PlayerStats.Instance.MaxHP;
-
+            PlayerHUD.Instance.SetObjectInteractionText("Picked up Super Health Pack");
+            PlayerStats.Instance.HP += m_Health;
             Destroy(gameObject);
         }
     }

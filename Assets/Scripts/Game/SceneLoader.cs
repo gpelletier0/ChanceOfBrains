@@ -22,7 +22,6 @@ public class SceneLoader : Singleton<SceneLoader>
     }
     public void ReloadGame()
     {
-        PlayerStats.Instance.HP = PlayerController.Instance.m_HP;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1;
     }

@@ -2,35 +2,44 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameMain : MonoBehaviour
 {
     [Header("Drop")]
     public float m_DropHeight = 60f;
 
-    private float m_ObeliskSpawnTime;
-    private float m_SupplyDropTime;
+    [Header("Spawn Time")]
+    public float m_ObeliskTime = 30f;
+    public float m_SupplyTime = 45f;
+
     private bool m_GameOver;
 
     private SceneLoader m_SceneLoader;
     private GameObject m_Obelisk;
-    private GameObject[] m_SupplyDropPrefabs;
 
+    private List<GameObject> m_SupplyDropPrefabs = new List<GameObject>();
     private List<GameObject> m_ObeliskList = new List<GameObject>();
     private List<GameObject> m_SpawnPoints = new List<GameObject>();
 
     private void Awake()
     {
         m_SceneLoader = GetComponent<SceneLoader>();
+        m_SpawnPoints.AddRange(GameObject.FindGameObjectsWithTag("Spawnable"));
+        
         m_Obelisk = Resources.Load<GameObject>("Prefabs/Enemies/Obelisk");
-        m_SupplyDropPrefabs = Resources.LoadAll<GameObject>("Prefabs/Pickups");
-        m_SpawnPoints.AddRange((FindObjectsOfType(typeof(GameObject)) as GameObject[]).Where(go => go.CompareTag("Spawnable")));        
+        m_SupplyDropPrefabs = Resources.LoadAll("Prefabs/Pickups", typeof(GameObject))
+                                .Cast<GameObject>()
+                                .Where(go => go.tag.Equals("SupplyDrop"))
+                                .ToList();
     }
 
     private void Start()
     {
-        m_ObeliskSpawnTime = GameSettings.Instance.m_ObeliskSpawnTime;
-        m_SupplyDropTime = GameSettings.Instance.m_SupplySpawnTime;
+        if(GameSettings.Instance.m_ObeliskSpawnTime > 0)
+            m_ObeliskTime = GameSettings.Instance.m_ObeliskSpawnTime;
+        if(GameSettings.Instance.m_SupplySpawnTime > 0)
+            m_SupplyTime = GameSettings.Instance.SetSupplySpawnTime;
 
         PlayerController.Instance.Initialize();
 
@@ -38,9 +47,9 @@ public class GameMain : MonoBehaviour
         Cursor.visible = false;
 
         PlayerHUD.Instance.ShowObjectiveText("Destroy all Obelisks", Color.red);
-        
+
         StartCoroutine(SpawnMoreOverlords());
-        StartCoroutine(SpawnSupplyDrop());
+        StartCoroutine(SpawnMoreSupplyDrop());
     }
 
     private void Update()
@@ -53,7 +62,7 @@ public class GameMain : MonoBehaviour
             {
                 m_GameOver = true;
                 PlayerController.Instance.CanMove = false;
-                
+
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
 
@@ -70,26 +79,32 @@ public class GameMain : MonoBehaviour
         m_ObeliskList.Add(go);
     }
 
+    private void SpawnSupplyDrop()
+    {
+
+        PlayerHUD.Instance.ShowObjectiveText("Supply Drop Inbound", Color.red);
+        Instantiate(m_SupplyDropPrefabs[Random.Range(0, m_SupplyDropPrefabs.Count)], GetRandomSpawnPoint(), Quaternion.identity);
+    }
+
     private IEnumerator SpawnMoreOverlords()
     {
         SpawnObelisk();
 
-        do
+        while (m_ObeliskList.Count > 0)
         {
-            yield return new WaitForSeconds(m_ObeliskSpawnTime);
+            yield return new WaitForSeconds(m_ObeliskTime);
+
             SpawnObelisk();
         }
-        while (m_ObeliskList.Count > 0);
     }
 
-    private IEnumerator SpawnSupplyDrop()
+    private IEnumerator SpawnMoreSupplyDrop()
     {
         while (true)
         {
-            yield return new WaitForSeconds(m_SupplyDropTime);
+            yield return new WaitForSeconds(m_SupplyTime);
 
-            PlayerHUD.Instance.ShowObjectiveText("Supply Drop Inbound", Color.red);
-            Instantiate(m_SupplyDropPrefabs[0], GetRandomSpawnPoint(), Quaternion.identity);
+            SpawnSupplyDrop();
         }
     }
 

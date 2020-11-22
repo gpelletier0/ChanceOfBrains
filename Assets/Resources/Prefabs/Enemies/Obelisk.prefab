@@ -545,7 +545,7 @@ AudioSource:
   m_GameObject: {fileID: 3334301116549398705}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: e86fb34648479444e96fcb064fea6edc, type: 2}
   m_audioClip: {fileID: 8300000, guid: 124d5bd4c6d3e8e47a9630159ac2ab0f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.1
@@ -648,6 +648,7 @@ MonoBehaviour:
     id: 0
   m_VampireBatSpawnTime: 2
   m_ZombieSpawnTime: 10
+  m_NbVampireBats: 1
   m_EnemyPrefabs:
   - {fileID: 122084, guid: 3747a42421e662b4381ea051221a53c9, type: 3}
   - {fileID: 3668228555784350164, guid: 714cac75a094a9d469427b93645d8538, type: 3}
@@ -660,9 +661,9 @@ MonoBehaviour:
       type: {class: EnemyStats, ns: , asm: Assembly-CSharp}
       data:
         m_HP: 10
-        m_Damage: 0
-        m_AttackSpeed: 0
-        m_DamageTimer: 0
+        m_Damage: 1
+        m_AttackSpeed: 1
+        m_DamageTimer: 1
         m_MoveSpeed: 0
         m_RotationSpeed: 0
         m_AttackDistance: 0
