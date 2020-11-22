@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 3334301116549398706}
   m_Layer: 10
   m_Name: Obelisk
-  m_TagString: Enemy
+  m_TagString: Obelisk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

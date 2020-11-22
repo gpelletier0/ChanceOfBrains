@@ -2472,9 +2472,9 @@ GameObject:
   - component: {fileID: 62533651937099469}
   - component: {fileID: 62533651937099506}
   - component: {fileID: 62533651937099507}
-  - component: {fileID: 62533652103236845}
   - component: {fileID: 62533651937099504}
   - component: {fileID: 62533651937099505}
+  - component: {fileID: 62533652103236845}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -2738,34 +2738,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &62533652103236845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 62533651937099510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80b4adcd747cb144a98949ea8a735bd7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HP: 100
-  m_ST: 100
-  m_MinJumpST: 30
-  walkSpeed: 2.5
-  runSpeed: 6
-  jumpSpeed: 8
-  gravity: 20
-  jumpRate: 1.2
-  jumpTimer: 0
-  jumpStam: 10
-  staminaDepletion: 5
-  staminaRecovery: 15
-  lookSpeed: 2
-  lookXLimit: 60
-  playerCameraParent: {fileID: 62533651596038712}
-  Wepon: {fileID: 62533651937099504}
 --- !u!114 &62533651937099504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2797,6 +2769,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Weapon: {fileID: 62533651937099504}
+--- !u!114 &62533652103236845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62533651937099510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80b4adcd747cb144a98949ea8a735bd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HP: 100
+  m_ST: 100
+  m_MinJumpST: 30
+  m_WalkSpeed: 2.5
+  m_RunSpeed: 6
+  m_JumpSpeed: 8
+  m_Gravity: 20
+  m_JumpTimer: 1.2
+  m_JumpStam: 10
+  m_StaminaDepletion: 5
+  m_StaminaRecovery: 15
+  m_LookSpeed: 2
+  m_LookXLimit: 60
+  m_PlayerCameraParent: {fileID: 62533651596038712}
+  m_Wepon: {fileID: 0}
 --- !u!1 &62533651959011341
 GameObject:
   m_ObjectHideFlags: 0
