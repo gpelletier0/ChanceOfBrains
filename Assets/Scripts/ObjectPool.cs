@@ -3,7 +3,7 @@ using UnityEngine;
 
 public static class ObjectPooler
 {
-    private const int DEFAULT_SIZE = 10;
+    private const int DEFAULT_SIZE = 5;
     private const bool m_bExpand = true;
     private static readonly Dictionary<string, List<GameObject>> m_ObjectPools = new Dictionary<string, List<GameObject>>();
 
@@ -56,11 +56,8 @@ public static class ObjectPooler
         }
     }
 
-    public static List<GameObject> CreateObjectPool(string path, int nb)
+    public static List<GameObject> CreateObjectPool(string path, int nb = 1)
     {
-        if (nb <= 0)
-            nb = 1;
-
         GameObject prefab = Resources.Load<GameObject>(path);
         List<GameObject> objects = new List<GameObject>();
 
