@@ -2,9 +2,6 @@
 using UnityEngine.Audio;
 public class GameSettings : Singleton<GameSettings>
 {
-    [Header("Audio")]
-    public AudioMixer m_AudioMixer;
-
     [Header("SpawnTimes")]
     public float m_ObeliskSpawnTime;
     public float m_SupplySpawnTime;
@@ -13,33 +10,23 @@ public class GameSettings : Singleton<GameSettings>
     public int m_NbVampireBats;
 
     #region Getters/Setters
-    
-    public float SetVolume
+
+    public float ObeliskSpawnTime
     {
-        set => m_AudioMixer.SetFloat("Volume", value);
+        get => Instance.m_ObeliskSpawnTime;
+        set => Instance.m_ObeliskSpawnTime = value;
     }
 
-    public bool SetFullScreen
+    public float SupplySpawnTime
     {
-        set => Screen.fullScreen = value;
-    }
-
-    public float SetObeliskSpawnTime
-    {
-        get => m_ObeliskSpawnTime;
-        set => m_ObeliskSpawnTime = value;
-    }
-
-    public float SetSupplySpawnTime
-    {
-        get => m_SupplySpawnTime;
-        set => m_SupplySpawnTime = value;
+        get => Instance.m_SupplySpawnTime;
+        set => Instance.m_SupplySpawnTime = value;
     }
 
     public float NbVampireBats
     {
-        get => m_NbVampireBats;
-        set => m_NbVampireBats = (int)value;
+        get => Instance.m_NbVampireBats;
+        set => Instance.m_NbVampireBats = (int)value;
     }
 
     #endregion
