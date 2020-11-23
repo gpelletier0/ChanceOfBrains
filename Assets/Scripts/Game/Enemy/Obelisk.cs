@@ -11,7 +11,7 @@ public class Obelisk : MonoBehaviour, IDamageable
     private const string VAMPIRE_BAT_PREFAB = "Prefabs/Enemies/VampireBat";
     private const string ZOMBIE_PREFAB = "Prefabs/Enemies/Zombie";
 
-    [SerializeReference] public EnemyStats m_EnemyStats;
+    [SerializeReference] public EnemyStats m_EnemyStats = new EnemyStats();
     public float m_VampireBatSpawnTime = 2.0f;
     public float m_ZombieSpawnTime = 10.0f;
     public float m_NbVampireBats = 1;

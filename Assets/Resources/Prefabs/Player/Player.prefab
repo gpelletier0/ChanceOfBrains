@@ -1851,7 +1851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f61dc6b695cc44196ff90230cf7f62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ReferenceTransform: {fileID: 62533651517666494}
+  m_ReferenceTransform: {fileID: 62533651596038712}
   m_CollisionOffset: 0.2
 --- !u!1 &62533651595207953
 GameObject:
@@ -2795,7 +2795,7 @@ MonoBehaviour:
   m_LookSpeed: 2
   m_LookXLimit: 60
   m_PlayerCameraParent: {fileID: 62533651596038712}
-  m_Wepon: {fileID: 0}
+  m_Wepon: {fileID: 62533651937099504}
 --- !u!1 &62533651959011341
 GameObject:
   m_ObjectHideFlags: 0

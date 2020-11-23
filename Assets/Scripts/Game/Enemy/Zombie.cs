@@ -8,7 +8,7 @@ using UnityEngine.AI;
 
 public class Zombie : MonoBehaviour, IDamageable
 {
-    [SerializeReference] private EnemyStats m_EnemyStats;
+    [SerializeReference] private EnemyStats m_EnemyStats = new EnemyStats();
     public float m_DestroyTime = 5f;
 
 

@@ -8,14 +8,14 @@ using UnityEngine;
 public class EnemyStats
 {
     [Header("Enemy Stats")]
-    [SerializeField] private float m_HP;
-    [SerializeField] private float m_StartingHP;
-    [SerializeField] private float m_Damage;
-    [SerializeField] private float m_AttackSpeed;
-    [SerializeField] private float m_DamageTimer;
-    [SerializeField] private float m_MoveSpeed ;
-    [SerializeField] private float m_AttackDistance;
-    [SerializeField] private float m_AggroDistance;
+    [SerializeField] private float m_HP = 1;
+    [SerializeField] private float m_StartingHP = 1;
+    [SerializeField] private float m_Damage = 1;
+    [SerializeField] private float m_AttackSpeed = 1;
+    [SerializeField] private float m_DamageTimer = 1;
+    [SerializeField] private float m_MoveSpeed = 1;
+    [SerializeField] private float m_AttackDistance = 1;
+    [SerializeField] private float m_AggroDistance = 1;
 
     #region Getters/Setters
     

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class VampireBat : MonoBehaviour, IDamageable
 {
-    [SerializeReference] public EnemyStats m_EnemyStats;
+    [SerializeReference] public EnemyStats m_EnemyStats = new EnemyStats();
     public GameObject m_BatSpit;
     public Transform m_FirePoint;
     public float m_RotationSpeed = 5f;
