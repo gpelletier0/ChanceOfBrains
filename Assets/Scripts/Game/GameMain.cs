@@ -37,6 +37,8 @@ public class GameMain : MonoBehaviour
 
     private void Start()
     {
+        ObjectPooler.Initialize();
+
         if(GameSettings.Instance.m_ObeliskSpawnTime > 0)
             m_ObeliskTime = GameSettings.Instance.m_ObeliskSpawnTime;
         if(GameSettings.Instance.m_SupplySpawnTime > 0)
