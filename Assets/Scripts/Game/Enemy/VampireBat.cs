@@ -16,8 +16,7 @@ public class VampireBat : MonoBehaviour, IDamageable
     private bool m_isAlive = true;
     private Animation m_Animation;
     private Transform m_Player;
-
-    [HideInInspector] public Transform m_ObeliskTransform;
+    private Transform m_ObeliskTransform;
 
     private float RandomSpawnPos() => Random.Range(-3f, 3f);
 
@@ -64,6 +63,7 @@ public class VampireBat : MonoBehaviour, IDamageable
                         GiveDamage();
                 }
             }
+
             if (m_EnemyStats.DamageTimer > 0)
                 m_EnemyStats.DamageTimer -= Time.deltaTime;
         }

@@ -19,8 +19,10 @@ public class Zombie : MonoBehaviour, IDamageable
     
     private Collider m_Collider;
     private Transform m_Player;
+    private Transform m_ObeliskTransform;
+
     [HideInInspector] public Animator m_Animator;
-    [HideInInspector] public Transform m_ObeliskTransform;
+    
 
 
     private float RandomSpawnPos() => Random.Range(-3f, 3f);

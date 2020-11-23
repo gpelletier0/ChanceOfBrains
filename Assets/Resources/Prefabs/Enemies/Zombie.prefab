@@ -909,11 +909,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_EnemyStats:
     id: 0
-  m_AggroDistance: 20
-  m_AttackDistance: 1
   m_DestroyTime: 5
   m_Animator: {fileID: 0}
-  m_Obelisk: {fileID: 0}
+  m_ObeliskTransform: {fileID: 0}
   references:
     version: 1
     00000000:
