@@ -20,7 +20,7 @@ public class Zombie : MonoBehaviour, IDamageable
     private Collider m_Collider;
     private Transform m_Player;
     [HideInInspector] public Animator m_Animator;
-    [HideInInspector] public Transform m_Obelisk;
+    [HideInInspector] public Transform m_ObeliskTransform;
 
 
     private float RandomSpawnPos() => Random.Range(-3f, 3f);
@@ -33,13 +33,15 @@ public class Zombie : MonoBehaviour, IDamageable
         m_Collider = GetComponent<CapsuleCollider>();
     }
 
-    public void Initialize()
+    public void Initialize(Transform t)
     {
-        transform.position = new Vector3(m_Obelisk.transform.position.x + RandomSpawnPos(), transform.position.y, m_Obelisk.transform.position.z + RandomSpawnPos());
         m_EnemyStats.HP = m_EnemyStats.StartingHP;
         m_Animator.SetBool("isDead", false);
         m_Agent.enabled = true;
         m_Collider.enabled = true;
+
+        m_ObeliskTransform = t;
+        transform.position = new Vector3(t.transform.position.x + RandomSpawnPos(), t.position.y, t.transform.position.z + RandomSpawnPos());
     }
 
     private void Start()
@@ -65,9 +67,9 @@ public class Zombie : MonoBehaviour, IDamageable
                     m_Agent.SetDestination(m_Player.position);
                 }
             }
-            else if (m_Obelisk != null)
+            else if (m_ObeliskTransform != null)
             {
-                m_Agent.SetDestination(m_Obelisk.position);
+                m_Agent.SetDestination(m_ObeliskTransform.position);
             }
 
             m_Animator.SetBool("isAttacking", distance < m_EnemyStats.AttackDistance ? true : false);

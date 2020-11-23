@@ -89,8 +89,7 @@ public class Obelisk : MonoBehaviour, IDamageable
         {
             Debug.Log($"{name} Spawns VampireBat");
             GameObject go = ObjectPooler.GetPooledObject(VAMPIRE_BAT_PREFAB);
-            go.GetComponent<VampireBat>().m_Obelisk = this.transform;
-            go.GetComponent<VampireBat>().Initialize();
+            go.GetComponent<VampireBat>().Initialize(transform);
             go.SetActive(true);
         }
         
@@ -105,8 +104,7 @@ public class Obelisk : MonoBehaviour, IDamageable
 
             Debug.Log($"{name} Spawns Zombie");
             GameObject go = ObjectPooler.GetPooledObject(ZOMBIE_PREFAB);
-            go.GetComponent<Zombie>().m_Obelisk = this.transform;
-            go.GetComponent<Zombie>().Initialize();
+            go.GetComponent<Zombie>().Initialize(transform);
             go.SetActive(true);
         }
     }

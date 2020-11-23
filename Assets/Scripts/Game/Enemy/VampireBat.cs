@@ -17,8 +17,7 @@ public class VampireBat : MonoBehaviour, IDamageable
     private Animation m_Animation;
     private Transform m_Player;
 
-    [HideInInspector] public Transform m_Obelisk;
-    private Transform m_Target;
+    [HideInInspector] public Transform m_ObeliskTransform;
 
     private float RandomSpawnPos() => Random.Range(-3f, 3f);
 
@@ -28,11 +27,13 @@ public class VampireBat : MonoBehaviour, IDamageable
         m_EnemyStats.DamageTimer = m_EnemyStats.AttackSpeed;
     }
 
-    public void Initialize()
+    public void Initialize(Transform t)
     {
-        transform.position = new Vector3(m_Obelisk.transform.position.x + RandomSpawnPos(), transform.position.y + m_GroundDistace, m_Obelisk.transform.position.z + RandomSpawnPos());
+        m_ObeliskTransform = t;
         m_EnemyStats.HP = m_EnemyStats.StartingHP;
         m_isAlive = true;
+
+        transform.position = new Vector3(t.transform.position.x + RandomSpawnPos(), t.transform.position.y + m_GroundDistace, t.transform.position.z + RandomSpawnPos());
     }
 
     private void Start()
@@ -44,34 +45,24 @@ public class VampireBat : MonoBehaviour, IDamageable
     {
         if (m_isAlive)
         {
+            Quaternion rotation = Quaternion.LookRotation(transform.position - m_Player.position);
+            rotation *= Quaternion.Euler(m_RotationAdjustX, 0, 0);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
+
             float distance = Vector3.Distance(m_Player.position, transform.position);
             
-            if (distance < m_EnemyStats.AttackDistance)
+            if (distance >= m_EnemyStats.AttackDistance)
             {
-                m_Target = m_Player;
-
-                if (distance <= m_EnemyStats.AttackDistance && m_EnemyStats.DamageTimer <= 0)
+                Vector3 flyTargetPos = new Vector3(m_Player.position.x, m_Player.position.y + m_GroundDistace, m_Player.position.z);
+                transform.position = Vector3.MoveTowards(transform.position, flyTargetPos, m_EnemyStats.MoveSpeed * Time.deltaTime);
+            }
+            else
+            {
+                if (m_EnemyStats.DamageTimer <= 0)
                     GiveDamage();
             }
-            //else if (m_Obelisk != null)
-            //{
-            //    m_Target = m_Obelisk;
-            //}
-            
-            if(m_Target != null)
-            {
-                Quaternion rotation = Quaternion.LookRotation(transform.position - m_Target.position);
-                rotation *= Quaternion.Euler(m_RotationAdjustX, 0, 0);
-                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
 
-                if (distance >= m_EnemyStats.AttackDistance)
-                {
-                    Vector3 flyTargetPos = new Vector3(m_Target.position.x, m_Target.position.y + m_GroundDistace, m_Target.position.z);
-                    transform.position = Vector3.MoveTowards(transform.position, flyTargetPos, m_EnemyStats.MoveSpeed * Time.deltaTime);
-                }
-            }
-
-            if(m_EnemyStats.DamageTimer > 0)
+            if (m_EnemyStats.DamageTimer > 0)
                 m_EnemyStats.DamageTimer -= Time.deltaTime;
         }
     }
