@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Player Stats singleton class
+/// </summary>
 public class PlayerStats : Singleton<PlayerStats>
 {
     public const float DEFAULT_STAT = 100;

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.Audio;
+
 public class GameSettings : Singleton<GameSettings>
 {
     [Header("SpawnTimes")]

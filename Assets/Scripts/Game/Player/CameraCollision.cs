@@ -2,32 +2,32 @@
 
 public class CameraCollision : MonoBehaviour
 {
-    public Transform referenceTransform;
-    public float collisionOffset = 0.2f; //To prevent Camera from clipping through Objects
+    public Transform m_ReferenceTransform;
+    public float m_CollisionOffset = 0.2f; //To prevent Camera from clipping through Objects
 
-    Vector3 defaultPos;
-    Vector3 directionNormalized;
-    Transform parentTransform;
-    float defaultDistance;
+    Vector3 m_DefaultPos;
+    Vector3 m_DirectionNormalized;
+    Transform m_ParentTransform;
+    float m_DefaultDistance;
 
     // Start is called before the first frame update
     void Start()
     {
-        defaultPos = transform.localPosition;
-        directionNormalized = defaultPos.normalized;
-        parentTransform = transform.parent;
-        defaultDistance = Vector3.Distance(defaultPos, Vector3.zero);
+        m_DefaultPos = transform.localPosition;
+        m_DirectionNormalized = m_DefaultPos.normalized;
+        m_ParentTransform = transform.parent;
+        m_DefaultDistance = Vector3.Distance(m_DefaultPos, Vector3.zero);
     }
 
     // FixedUpdate for physics calculations
     void FixedUpdate()
     {
-        Vector3 currentPos = defaultPos;
+        Vector3 currentPos = m_DefaultPos;
         RaycastHit hit;
-        Vector3 dirTmp = parentTransform.TransformPoint(defaultPos) - referenceTransform.position;
-        if (Physics.SphereCast(referenceTransform.position, collisionOffset, dirTmp, out hit, defaultDistance))
+        Vector3 dirTmp = m_ParentTransform.TransformPoint(m_DefaultPos) - m_ReferenceTransform.position;
+        if (Physics.SphereCast(m_ReferenceTransform.position, m_CollisionOffset, dirTmp, out hit, m_DefaultDistance))
         {
-            currentPos = (directionNormalized * (hit.distance - collisionOffset));
+            currentPos = (m_DirectionNormalized * (hit.distance - m_CollisionOffset));
         }
 
         transform.localPosition = Vector3.Lerp(transform.localPosition, currentPos, Time.deltaTime * 15f);

@@ -45,8 +45,15 @@ public class PlayerController : Singleton<PlayerController>, IDamageable
     private CharacterController m_CharController;
 
 
+    /// <summary>
+    /// Freezes the player
+    /// </summary>
     public bool CanMove {get; set;}
 
+
+    /// <summary>
+    /// Initialize Class to default
+    /// </summary>
     public void Initialize()
     {
         CanMove = true;
@@ -57,6 +64,9 @@ public class PlayerController : Singleton<PlayerController>, IDamageable
         PlayerStats.Instance.AmmoCount = m_Wepon.m_StartAmmo;
     }
 
+    /// <summary>
+    /// MonoBehaviour
+    /// </summary>
     protected override void Awake()
     {
         //m_Wepon = GetComponent<M4A1>();
@@ -65,6 +75,9 @@ public class PlayerController : Singleton<PlayerController>, IDamageable
         m_PlayerHUD = GameObject.Find("PlayerHUD").GetComponent<PlayerHUD>();
     }
 
+    /// <summary>
+    /// MonoBehaviour
+    /// </summary>
     private void Start()
     {
         CanMove = true;
@@ -76,6 +89,9 @@ public class PlayerController : Singleton<PlayerController>, IDamageable
         m_Rotation.y = transform.eulerAngles.y;
     }
 
+    /// <summary>
+    /// MonoBehaviour
+    /// </summary>
     private void Update()
     {
         if (CanMove)
@@ -146,21 +162,34 @@ public class PlayerController : Singleton<PlayerController>, IDamageable
         }
     }
 
+    /// <summary>
+    /// MonoBehaviour
+    /// </summary>
     private void FixedUpdate()
     {
         m_PlayerHUD.UpdateStats();
     }
 
+    /// <summary>
+    /// Get the current run speed
+    /// </summary>
+    /// <returns></returns>
     private float GetRunSpeed()
     {
         return Mathf.Lerp(m_WalkSpeed, m_RunSpeed, PlayerStats.Instance.ST / PlayerStats.Instance.MaxST);
     }
 
+    /// <summary>
+    /// IDamagable GiveDamage implementation
+    /// </summary>
     public void GiveDamage()
     {
         m_Wepon.Fire();
     }
 
+    /// <summary>
+    /// IDamagable TakeDamage implementation
+    /// </summary>
     public void TakeDamage(float dmg)
     {
         if (PlayerStats.Instance.HP > 0)
@@ -170,6 +199,9 @@ public class PlayerController : Singleton<PlayerController>, IDamageable
         }
     }
 
+    /// <summary>
+    /// IDamagable Die implementation
+    /// </summary>
     public void Die()
     {
         m_Animator.SetBool("isDead", true);

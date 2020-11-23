@@ -16,30 +16,46 @@ public class VampireBat : MonoBehaviour, IDamageable
     private bool m_isAlive = true;
     private Animation m_Animation;
     private Transform m_Player;
-    private Transform m_ObeliskTransform;
 
+
+    /// <summary>
+    /// Generate radom spawn position
+    /// </summary>
+    /// <returns></returns>
     private float RandomSpawnPos() => Random.Range(-3f, 3f);
 
+    /// <summary>
+    /// MonoBehaviour
+    /// </summary>
     private void Awake()
     {
         m_Animation = GetComponent<Animation>();
         m_EnemyStats.DamageTimer = m_EnemyStats.AttackSpeed;
     }
 
+    /// <summary>
+    /// Initialize Class to default
+    /// </summary>
+    /// <param name="t"> transform of spawning obelisk </param>
     public void Initialize(Transform t)
     {
-        m_ObeliskTransform = t;
         m_EnemyStats.HP = m_EnemyStats.StartingHP;
         m_isAlive = true;
 
         transform.position = new Vector3(t.transform.position.x + RandomSpawnPos(), t.transform.position.y + m_GroundDistace, t.transform.position.z + RandomSpawnPos());
     }
 
+    /// <summary>
+    /// MonoBehaviour
+    /// </summary>
     private void Start()
     {
         m_Player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
+    /// <summary>
+    /// MonoBehaviour
+    /// </summary>
     private void Update()
     {
         if (m_isAlive)
@@ -69,6 +85,9 @@ public class VampireBat : MonoBehaviour, IDamageable
         }
     }
 
+    /// <summary>
+    /// IDamagable TakeDamage implementation
+    /// </summary>
     public void TakeDamage(float dmg)
     {
         if (m_EnemyStats.HP >= 0)
@@ -84,12 +103,9 @@ public class VampireBat : MonoBehaviour, IDamageable
 
     }
 
-    public void Die()
-    {
-        m_isAlive = false;
-        StartCoroutine(Despawn());
-    }
-
+    /// <summary>
+    /// IDamagable GiveDamage implementation
+    /// </summary>
     public void GiveDamage()
     {
         StartCoroutine(AttackAnimation());
@@ -97,10 +113,23 @@ public class VampireBat : MonoBehaviour, IDamageable
         GameObject batspit = Instantiate(m_BatSpit, m_FirePoint.position, Quaternion.identity);
         batspit.GetComponent<BatSpit>().m_Target = new Vector3(m_Player.position.x, m_Player.position.y + 1f, m_Player.position.z);
         batspit.GetComponent<BatSpit>().m_Dammage = m_EnemyStats.Damage;
-        
+
         m_EnemyStats.DamageTimer = m_EnemyStats.AttackSpeed;
     }
 
+    /// <summary>
+    /// IDamagable Die implementation
+    /// </summary>
+    public void Die()
+    {
+        m_isAlive = false;
+        StartCoroutine(Despawn());
+    }
+
+    /// <summary>
+    /// Coroutine for Attack animation
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator AttackAnimation()
     {
         m_Animation.Play("Attack");
@@ -110,6 +139,10 @@ public class VampireBat : MonoBehaviour, IDamageable
         m_Animation.Play("FlyCycle");
     }
 
+    /// <summary>
+    /// Coroutine for Damage animation
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator DamageAnimation()
     {
         m_Animation.Play("GetDamage");
@@ -119,6 +152,10 @@ public class VampireBat : MonoBehaviour, IDamageable
         m_Animation.Play("FlyCycle");
     }
 
+    /// <summary>
+    /// Coroutine for playin the death animation and deactivating the gameobject
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator Despawn()
     {
         Debug.Log("Bat Died");

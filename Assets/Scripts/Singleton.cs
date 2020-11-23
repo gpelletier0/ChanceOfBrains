@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// https://github.com/UnityCommunity/UnitySingleton
+/// </summary>
+/// <typeparam name="T"></typeparam>
 public abstract class Singleton<T> : MonoBehaviour where T : Component
 {
 	#region Fields

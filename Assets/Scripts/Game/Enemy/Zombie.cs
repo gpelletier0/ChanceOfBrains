@@ -9,24 +9,27 @@ using UnityEngine.AI;
 public class Zombie : MonoBehaviour, IDamageable
 {
     [SerializeReference] private EnemyStats m_EnemyStats;
-    //public float m_AggroDistance = 20f;
-    //public float m_AttackDistance = 1f;
     public float m_DestroyTime = 5f;
 
-    //private float m_StartingHP;
+
     private NavMeshPath m_navMeshPath;
     private NavMeshAgent m_Agent;
-    
+
     private Collider m_Collider;
     private Transform m_Player;
     private Transform m_ObeliskTransform;
 
     [HideInInspector] public Animator m_Animator;
-    
 
-
+    /// <summary>
+    /// Generate radom spawn position
+    /// </summary>
+    /// <returns></returns>
     private float RandomSpawnPos() => Random.Range(-3f, 3f);
 
+    /// <summary>
+    /// MonoBehaviour
+    /// </summary>
     private void Awake()
     {
         m_navMeshPath = new NavMeshPath();
@@ -35,6 +38,11 @@ public class Zombie : MonoBehaviour, IDamageable
         m_Collider = GetComponent<CapsuleCollider>();
     }
 
+
+    /// <summary>
+    /// Initialize Class to default
+    /// </summary>
+    /// <param name="t"> transform of spawning obelisk </param>
     public void Initialize(Transform t)
     {
         m_EnemyStats.HP = m_EnemyStats.StartingHP;
@@ -51,6 +59,9 @@ public class Zombie : MonoBehaviour, IDamageable
         m_Player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
+    /// <summary>
+    /// MonoBehaviour
+    /// </summary>
     private void Update()
     {
         if (m_EnemyStats.HP <= 0 && !m_Animator.GetBool("isDead"))
@@ -59,11 +70,11 @@ public class Zombie : MonoBehaviour, IDamageable
         if (m_Agent.isActiveAndEnabled)
         {
             float distance = Vector3.Distance(m_Player.position, transform.position);
-            
+
             if (distance < m_EnemyStats.AggroDistance)
             {
                 m_Agent.CalculatePath(m_Player.position, m_navMeshPath);
-                
+
                 if (m_navMeshPath.status == NavMeshPathStatus.PathComplete)
                 {
                     m_Agent.SetDestination(m_Player.position);
@@ -74,8 +85,8 @@ public class Zombie : MonoBehaviour, IDamageable
                 m_Agent.SetDestination(m_ObeliskTransform.position);
             }
 
-            m_Animator.SetBool("isAttacking", distance < m_EnemyStats.AttackDistance ? true : false);
-            m_Animator.SetBool("isMoving", m_Agent.velocity != Vector3.zero ? true : false);
+            m_Animator.SetBool("isAttacking", distance < m_EnemyStats.AttackDistance);
+            m_Animator.SetBool("isMoving", m_Agent.velocity != Vector3.zero);
 
             if (m_Animator.GetBool("isAttacking"))
             {
@@ -83,7 +94,7 @@ public class Zombie : MonoBehaviour, IDamageable
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
 
                 if (m_EnemyStats.DamageTimer <= 0)
-                    GiveDamage();      
+                    GiveDamage();
             }
 
             if (m_EnemyStats.DamageTimer > 0)
@@ -91,6 +102,10 @@ public class Zombie : MonoBehaviour, IDamageable
         }
     }
 
+
+    /// <summary>
+    /// IDamagable TakeDamage implementation
+    /// </summary>
     public void TakeDamage(float dmg)
     {
         if (m_EnemyStats.HP >= 0)
@@ -100,6 +115,9 @@ public class Zombie : MonoBehaviour, IDamageable
         }
     }
 
+    /// <summary>
+    /// IDamagable GiveDamage implementation
+    /// </summary>
     public void GiveDamage()
     {
         m_EnemyStats.DamageTimer = m_EnemyStats.AttackSpeed;
@@ -107,15 +125,22 @@ public class Zombie : MonoBehaviour, IDamageable
         PlayerStats.Instance.HP -= m_EnemyStats.Damage;
     }
 
+    /// <summary>
+    /// IDamagable Die implementation
+    /// </summary>
     public void Die()
     {
         m_Animator.SetBool("isDead", true);
         m_Agent.enabled = false;
         m_Collider.enabled = false;
-        
+
         StartCoroutine(Despawn());
     }
 
+    /// <summary>
+    /// Coroutine deactivating the gameobject
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator Despawn()
     {
         Debug.Log("Zombie Died");

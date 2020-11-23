@@ -28,6 +28,10 @@ public class Obelisk : MonoBehaviour, IDamageable
         name += Random.Range(0, 100).ToString();
         m_AudioSource = GetComponent<AudioSource>();
     }
+
+    /// <summary>
+    /// Initialize Class to default
+    /// </summary>
     public void Initialize()
     {
         m_EnemyStats.HP = m_EnemyStats.StartingHP;
@@ -35,6 +39,11 @@ public class Obelisk : MonoBehaviour, IDamageable
         GetComponent<Rigidbody>().isKinematic = false;
     }
     
+
+    /// <summary>
+    /// When obelisk hits the ground layer disable box collider and rigid body, set pos y to road
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Roads"))
@@ -47,6 +56,10 @@ public class Obelisk : MonoBehaviour, IDamageable
         }
     }
 
+    /// <summary>
+    /// IDamagable TakeDamage implementation
+    /// </summary>
+    /// <param name="dmg"></param>
     public void TakeDamage(float dmg)
     {
         if (m_EnemyStats.HP >= 0)
@@ -60,8 +73,15 @@ public class Obelisk : MonoBehaviour, IDamageable
         }
     }
 
+
+    /// <summary>
+    /// IDamagable GiveDamage implementation
+    /// </summary>
     public void GiveDamage(){}
 
+    /// <summary>
+    /// IDamagable Die implementation
+    /// </summary>
     public void Die()
     {
         Debug.Log("Obelisk Died");
@@ -76,6 +96,11 @@ public class Obelisk : MonoBehaviour, IDamageable
         }
     }
 
+
+    /// <summary>
+    /// Coroutine to spawn the enemies
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator SpawnEnemy()
     {
         float timer = 0f;

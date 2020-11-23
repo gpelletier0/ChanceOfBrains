@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class SaveSettings : MonoBehaviour
 {
-
     public GameObject m_ObeliskSlider;
     public GameObject m_SupplyDropSlider;
     public GameObject m_VampireBatSlider;

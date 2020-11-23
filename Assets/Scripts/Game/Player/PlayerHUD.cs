@@ -2,7 +2,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+
+/// <summary>
+/// Fade state
+/// </summary>
 public enum eFadeType { IN, OUT }
+
 
 public class PlayerHUD : Singleton<PlayerHUD>
 {
@@ -20,6 +25,9 @@ public class PlayerHUD : Singleton<PlayerHUD>
     private float m_FadeAlpha = 1.0f;
     private IEnumerator m_FadeCoroutine;
 
+    /// <summary>
+    /// MonoBehaviour
+    /// </summary>
     protected override void Awake()
     {
         m_crosshair = GameObject.Find("Crosshair");
@@ -31,6 +39,9 @@ public class PlayerHUD : Singleton<PlayerHUD>
         m_FadeImage = GameObject.Find("FadeImage").GetComponent<Image>();
     }
 
+    /// <summary>
+    /// MonoBehaviour
+    /// </summary>
     private void Start()
     {
         if (m_FadeImage)
@@ -43,6 +54,11 @@ public class PlayerHUD : Singleton<PlayerHUD>
         }
     }
 
+    /// <summary>
+    /// Fade the image alpha
+    /// </summary>
+    /// <param name="seconds"> seconds of fade </param>
+    /// <param name="direction"> in or out enum </param>
     public void Fade(float seconds, eFadeType direction)
     {
         if (m_FadeCoroutine != null) 
@@ -59,6 +75,12 @@ public class PlayerHUD : Singleton<PlayerHUD>
         StartCoroutine(m_FadeCoroutine);
     }
 
+    /// <summary>
+    /// Coroutine to fade the fade image
+    /// </summary>
+    /// <param name="seconds"> secods of fade </param>
+    /// <param name="targetFade"> desired alpha </param>
+    /// <returns></returns>
     private IEnumerator FadeCoroutine(float seconds, float targetFade)
     {
         if (m_FadeImage)
@@ -88,6 +110,9 @@ public class PlayerHUD : Singleton<PlayerHUD>
         yield break;
     }
 
+    /// <summary>
+    /// Display current player stats 
+    /// </summary>
     public void UpdateStats()
     {
         if (PlayerStats.Instance != null)
@@ -101,6 +126,10 @@ public class PlayerHUD : Singleton<PlayerHUD>
         }
     }
 
+    /// <summary>
+    /// Set the object interaction text and invoke hide
+    /// </summary>
+    /// <param name="str"></param>
     public void SetObjectInteractionText(string str)
     {
         if (m_ObjectInteractionText)
@@ -114,18 +143,25 @@ public class PlayerHUD : Singleton<PlayerHUD>
         Invoke("HideObjectInteractionText", m_TextDisplayTime);
     }
 
+    /// <summary>
+    /// Hide the object interaction text
+    /// </summary>
     public void HideObjectInteractionText()
     {
         if (m_ObjectInteractionText != null)
             m_ObjectInteractionText.gameObject.SetActive(false);
     }
 
-    public void ShowObjectiveText(string str, Color color)
+
+    /// <summary>
+    /// Display objective text and invoke hide
+    /// </summary>
+    /// <param name="str"></param>
+    public void ShowObjectiveText(string str)
     {
         if (m_ObjectiveText != null)
         {
             m_ObjectiveText.gameObject.SetActive(true);
-            m_ObjectInteractionText.color = color;
 
             if (str != null)
                 m_ObjectiveText.text = str;
@@ -134,6 +170,10 @@ public class PlayerHUD : Singleton<PlayerHUD>
         Invoke("HideObjectiveText", m_TextDisplayTime);
     }
 
+
+    /// <summary>
+    /// Hide objective text
+    /// </summary>
     public void HideObjectiveText()
     {
         if (m_ObjectiveText != null)
