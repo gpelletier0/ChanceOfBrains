@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider))]
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(AudioSource))]
 
 public class Obelisk : MonoBehaviour, IDamageable
 {
@@ -14,10 +16,7 @@ public class Obelisk : MonoBehaviour, IDamageable
     public float m_ZombieSpawnTime = 10.0f;
     public float m_NbVampireBats = 1;
 
-    public List<GameObject> m_EnemyPrefabs;
     public List<GameObject> m_PickupDrops;
-
-    private List<GameObject> m_VampireBatList = new List<GameObject>();
     private AudioSource m_AudioSource;
 
 
@@ -29,6 +28,13 @@ public class Obelisk : MonoBehaviour, IDamageable
         m_AudioSource = GetComponent<AudioSource>();
     }
 
+    public void Initialize()
+    {
+        m_EnemyStats.HP = m_EnemyStats.StartingHP;
+        GetComponent<BoxCollider>().isTrigger = true;
+        GetComponent<Rigidbody>().isKinematic = false;
+    }    
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Roads"))
@@ -83,7 +89,9 @@ public class Obelisk : MonoBehaviour, IDamageable
         {
             Debug.Log($"{name} Spawns VampireBat");
             GameObject go = ObjectPooler.GetPooledObject(VAMPIRE_BAT_PREFAB);
+            go.GetComponent<VampireBat>().Initialize();
             go.transform.position = new Vector3(transform.position.x + RandomSpawnPos(), transform.position.y + 2, transform.position.z + RandomSpawnPos());
+            go.GetComponent<VampireBat>().m_Obelisk = transform;
             go.SetActive(true);
         }
         
@@ -97,10 +105,15 @@ public class Obelisk : MonoBehaviour, IDamageable
             }
 
             Debug.Log($"{name} Spawns Zombie");
+            GameObject go = ObjectPooler.GetPooledObject(ZOMBIE_PREFAB);
+            go.GetComponent<Zombie>().Initialize();
+            go.transform.position = new Vector3(transform.position.x + RandomSpawnPos(), transform.position.y, transform.position.z + RandomSpawnPos());
+            go.GetComponent<Zombie>().m_Obelisk = transform;
+            go.SetActive(true);
 
-            Vector3 pos = new Vector3(transform.position.x + RandomSpawnPos(), 0f, transform.position.z + RandomSpawnPos());
-            GameObject z = Instantiate(m_EnemyPrefabs[1], pos, Quaternion.identity);
-            z.GetComponent<Zombie>().m_Obelisk = transform;
+            //Vector3 pos = new Vector3(transform.position.x + RandomSpawnPos(), 0f, transform.position.z + RandomSpawnPos());
+            //GameObject z = Instantiate(m_EnemyPrefabs[1], pos, Quaternion.identity);
+            //z.GetComponent<Zombie>().m_Obelisk = transform;
         }
     }
 }

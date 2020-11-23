@@ -77,11 +77,10 @@ public class GameMain : MonoBehaviour
         PlayerHUD.Instance.ShowObjectiveText("Obelisk has spawned", Color.red);
 
         GameObject go = ObjectPooler.GetPooledObject(OBELISK_PREFAB_PATH);
+        go.GetComponent<Obelisk>().Initialize();
         go.GetComponent<Obelisk>().m_NbVampireBats = GameSettings.Instance.NbVampireBats;
         go.transform.position = GetRandomSpawnPoint();
-        
-        go.GetComponent<BoxCollider>().isTrigger = true;
-        go.GetComponent<Rigidbody>().isKinematic = false;
+
         go.SetActive(true);
     }
 

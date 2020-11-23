@@ -21,6 +21,12 @@ public class VampireBat : MonoBehaviour, IDamageable
 
     [HideInInspector] public Transform m_Obelisk;
     private Transform m_Target;
+    
+    public void Initialize()
+    {
+        m_EnemyStats.HP = m_EnemyStats.StartingHP;
+        isAlive = true;
+    }
 
     private void Awake()
     {
@@ -125,7 +131,7 @@ public class VampireBat : MonoBehaviour, IDamageable
         m_Animation.Play("Die");
         
         yield return new WaitForSeconds(1.5f);
-        
-        Destroy(gameObject);
+
+        gameObject.SetActive(false);
     }
 }

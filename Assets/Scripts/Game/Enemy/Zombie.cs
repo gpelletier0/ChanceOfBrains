@@ -16,10 +16,20 @@ public class Zombie : MonoBehaviour, IDamageable
     
     private NavMeshPath m_navMeshPath;
     private NavMeshAgent m_Agent;
-    private Animator m_Animator;
+    
     private Collider m_Collider;
     private Transform m_Player;
+    [HideInInspector] public Animator m_Animator;
     [HideInInspector] public Transform m_Obelisk;
+
+
+    public void Initialize()
+    {
+        m_EnemyStats.HP = m_EnemyStats.StartingHP;
+        m_Animator.SetBool("isDead", false);
+        m_Agent.enabled = true;
+        m_Collider.enabled = true;
+    }
 
     private void Awake()
     {
@@ -102,7 +112,9 @@ public class Zombie : MonoBehaviour, IDamageable
     private IEnumerator Despawn()
     {
         Debug.Log("Zombie Died");
+
         yield return new WaitForSeconds(m_DestroyTime);
-        Destroy(gameObject);
+
+        gameObject.SetActive(false);
     }
 }
