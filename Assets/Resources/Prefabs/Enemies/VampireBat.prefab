@@ -594,7 +594,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 122084}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.01395813, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -657,10 +657,7 @@ MonoBehaviour:
     id: 0
   m_BatSpit: {fileID: 4294653463663760440, guid: 2d1dbac03b77b3b4293d145fc537185f, type: 3}
   m_FirePoint: {fileID: 3404494200690124052}
-  m_MoveSpeed: 3
   m_RotationSpeed: 5
-  m_AttackDistance: 5
-  m_AggroDistance: 20
   m_GroundDistace: 3
   m_RotationAdjustX: 40
   m_Obelisk: {fileID: 0}
@@ -669,14 +666,14 @@ MonoBehaviour:
     00000000:
       type: {class: EnemyStats, ns: , asm: Assembly-CSharp}
       data:
-        m_HP: 4
+        m_HP: 5
+        m_StartingHP: 5
         m_Damage: 5
-        m_AttackSpeed: 3
-        m_DamageTimer: 2
-        m_MoveSpeed: 0
-        m_RotationSpeed: 0
-        m_AttackDistance: 0
-        m_AggroDistance: 0
+        m_AttackSpeed: 2
+        m_DamageTimer: 0
+        m_MoveSpeed: 3
+        m_AttackDistance: 5
+        m_AggroDistance: 20
 --- !u!1 &124496
 GameObject:
   m_ObjectHideFlags: 0

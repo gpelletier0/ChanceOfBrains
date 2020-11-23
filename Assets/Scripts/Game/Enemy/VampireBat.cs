@@ -5,33 +5,34 @@ using UnityEngine;
 
 public class VampireBat : MonoBehaviour, IDamageable
 {
-    [SerializeReference] public EnemyStats m_EnemyStats = new EnemyStats(4, 2, 2);
+    [SerializeReference] public EnemyStats m_EnemyStats;
     public GameObject m_BatSpit;
     public Transform m_FirePoint;
-    public float m_MoveSpeed = 3f;
     public float m_RotationSpeed = 5f;
-    public float m_AttackDistance = 5f;
-    public float m_AggroDistance = 20f;
     public float m_GroundDistace = 3f;
     public float m_RotationAdjustX = 40f;
 
-    private bool isAlive = true;
+
+    private bool m_isAlive = true;
     private Animation m_Animation;
     private Transform m_Player;
 
     [HideInInspector] public Transform m_Obelisk;
     private Transform m_Target;
-    
-    public void Initialize()
-    {
-        m_EnemyStats.HP = m_EnemyStats.StartingHP;
-        isAlive = true;
-    }
+
+    private float RandomSpawnPos() => Random.Range(-3f, 3f);
 
     private void Awake()
     {
         m_Animation = GetComponent<Animation>();
         m_EnemyStats.DamageTimer = m_EnemyStats.AttackSpeed;
+    }
+
+    public void Initialize()
+    {
+        transform.position = new Vector3(m_Obelisk.transform.position.x + RandomSpawnPos(), transform.position.y + m_GroundDistace, m_Obelisk.transform.position.z + RandomSpawnPos());
+        m_EnemyStats.HP = m_EnemyStats.StartingHP;
+        m_isAlive = true;
     }
 
     private void Start()
@@ -41,15 +42,15 @@ public class VampireBat : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        if (isAlive)
+        if (m_isAlive)
         {
             float distance = Vector3.Distance(m_Player.position, transform.position);
             
-            if (distance < m_AggroDistance)
+            if (distance < m_EnemyStats.AttackDistance)
             {
                 m_Target = m_Player;
 
-                if (distance <= m_AttackDistance && m_EnemyStats.DamageTimer <= 0)
+                if (distance <= m_EnemyStats.AttackDistance && m_EnemyStats.DamageTimer <= 0)
                     GiveDamage();
             }
             //else if (m_Obelisk != null)
@@ -63,10 +64,10 @@ public class VampireBat : MonoBehaviour, IDamageable
                 rotation *= Quaternion.Euler(m_RotationAdjustX, 0, 0);
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
 
-                if (distance >= m_AttackDistance)
+                if (distance >= m_EnemyStats.AttackDistance)
                 {
                     Vector3 flyTargetPos = new Vector3(m_Target.position.x, m_Target.position.y + m_GroundDistace, m_Target.position.z);
-                    transform.position = Vector3.MoveTowards(transform.position, flyTargetPos, m_MoveSpeed * Time.deltaTime);
+                    transform.position = Vector3.MoveTowards(transform.position, flyTargetPos, m_EnemyStats.MoveSpeed * Time.deltaTime);
                 }
             }
 
@@ -92,7 +93,7 @@ public class VampireBat : MonoBehaviour, IDamageable
 
     public void Die()
     {
-        isAlive = false;
+        m_isAlive = false;
         StartCoroutine(Despawn());
     }
 

@@ -912,19 +912,21 @@ MonoBehaviour:
   m_AggroDistance: 20
   m_AttackDistance: 1
   m_DestroyTime: 5
+  m_Animator: {fileID: 0}
+  m_Obelisk: {fileID: 0}
   references:
     version: 1
     00000000:
       type: {class: EnemyStats, ns: , asm: Assembly-CSharp}
       data:
         m_HP: 2
+        m_StartingHP: 2
         m_Damage: 1
         m_AttackSpeed: 1
-        m_MoveSpeed: 0
-        m_RotationSpeed: 0
-        m_AttackDistance: 0
-        m_AggroDistance: 0
-        m_DammageTimer: 1
+        m_DamageTimer: 0
+        m_MoveSpeed: 1
+        m_AttackDistance: 1
+        m_AggroDistance: 20
 --- !u!1 &3668228555817530094
 GameObject:
   m_ObjectHideFlags: 0

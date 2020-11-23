@@ -649,9 +649,6 @@ MonoBehaviour:
   m_VampireBatSpawnTime: 2
   m_ZombieSpawnTime: 10
   m_NbVampireBats: 1
-  m_EnemyPrefabs:
-  - {fileID: 122084, guid: 3747a42421e662b4381ea051221a53c9, type: 3}
-  - {fileID: 3668228555784350164, guid: 714cac75a094a9d469427b93645d8538, type: 3}
   m_PickupDrops:
   - {fileID: 1410293670906794219, guid: 733c2703057d393469410c9a28346a58, type: 3}
   - {fileID: 8949004869490049363, guid: 0d2c0caac981e3843811aa1e3bbe02c4, type: 3}
@@ -661,11 +658,11 @@ MonoBehaviour:
       type: {class: EnemyStats, ns: , asm: Assembly-CSharp}
       data:
         m_HP: 10
-        m_Damage: 1
-        m_AttackSpeed: 1
-        m_DamageTimer: 1
+        m_StartingHP: 10
+        m_Damage: 0
+        m_AttackSpeed: 0
+        m_DamageTimer: 0
         m_MoveSpeed: 0
-        m_RotationSpeed: 0
         m_AttackDistance: 0
         m_AggroDistance: 0
 --- !u!1 &8230709827906323278

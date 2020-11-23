@@ -8,12 +8,12 @@ using UnityEngine.AI;
 
 public class Zombie : MonoBehaviour, IDamageable
 {
-    [SerializeReference] private EnemyStats m_EnemyStats = new EnemyStats(2, 1, 1);
-    public float m_AggroDistance = 20f;
-    public float m_AttackDistance = 1f;
+    [SerializeReference] private EnemyStats m_EnemyStats;
+    //public float m_AggroDistance = 20f;
+    //public float m_AttackDistance = 1f;
     public float m_DestroyTime = 5f;
 
-    
+    //private float m_StartingHP;
     private NavMeshPath m_navMeshPath;
     private NavMeshAgent m_Agent;
     
@@ -23,13 +23,7 @@ public class Zombie : MonoBehaviour, IDamageable
     [HideInInspector] public Transform m_Obelisk;
 
 
-    public void Initialize()
-    {
-        m_EnemyStats.HP = m_EnemyStats.StartingHP;
-        m_Animator.SetBool("isDead", false);
-        m_Agent.enabled = true;
-        m_Collider.enabled = true;
-    }
+    private float RandomSpawnPos() => Random.Range(-3f, 3f);
 
     private void Awake()
     {
@@ -37,6 +31,15 @@ public class Zombie : MonoBehaviour, IDamageable
         m_Agent = GetComponent<NavMeshAgent>();
         m_Animator = GetComponent<Animator>();
         m_Collider = GetComponent<CapsuleCollider>();
+    }
+
+    public void Initialize()
+    {
+        transform.position = new Vector3(m_Obelisk.transform.position.x + RandomSpawnPos(), transform.position.y, m_Obelisk.transform.position.z + RandomSpawnPos());
+        m_EnemyStats.HP = m_EnemyStats.StartingHP;
+        m_Animator.SetBool("isDead", false);
+        m_Agent.enabled = true;
+        m_Collider.enabled = true;
     }
 
     private void Start()
@@ -53,7 +56,7 @@ public class Zombie : MonoBehaviour, IDamageable
         {
             float distance = Vector3.Distance(m_Player.position, transform.position);
             
-            if (distance < m_AggroDistance)
+            if (distance < m_EnemyStats.AggroDistance)
             {
                 m_Agent.CalculatePath(m_Player.position, m_navMeshPath);
                 
@@ -67,7 +70,7 @@ public class Zombie : MonoBehaviour, IDamageable
                 m_Agent.SetDestination(m_Obelisk.position);
             }
 
-            m_Animator.SetBool("isAttacking", distance < m_AttackDistance ? true : false);
+            m_Animator.SetBool("isAttacking", distance < m_EnemyStats.AttackDistance ? true : false);
             m_Animator.SetBool("isMoving", m_Agent.velocity != Vector3.zero ? true : false);
 
             if (m_Animator.GetBool("isAttacking"))
