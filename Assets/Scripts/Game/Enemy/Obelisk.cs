@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class Obelisk : MonoBehaviour, IDamageable
 {
+    private const string VAMPIRE_BAT_PREFAB = "Prefabs/Enemies/VampireBat";
+    private const string ZOMBIE_PREFAB = "Prefabs/Enemies/Zombie";
+
     [SerializeReference] public EnemyStats m_EnemyStats = new EnemyStats(10);
     public float m_VampireBatSpawnTime = 2.0f;
     public float m_ZombieSpawnTime = 10.0f;
@@ -23,24 +26,7 @@ public class Obelisk : MonoBehaviour, IDamageable
     private void Awake()
     {
         name += Random.Range(0, 100).ToString();
-
-        if (GameSettings.Instance.NbVampireBats > 0)
-            m_NbVampireBats = GameSettings.Instance.NbVampireBats;
-
         m_AudioSource = GetComponent<AudioSource>();
-
-        for(int i = 0; i < m_NbVampireBats; i++)
-        {
-            Vector3 pos = new Vector3(transform.position.x + RandomSpawnPos(),
-                                      m_EnemyPrefabs[0].transform.position.y,
-                                      transform.position.z + RandomSpawnPos());
-
-            GameObject go = Instantiate(m_EnemyPrefabs[0], pos, Quaternion.identity);
-            go.SetActive(false);
-            go.GetComponent<VampireBat>().m_Obelisk = transform;
-
-            m_VampireBatList.Add(go);
-        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -50,14 +36,7 @@ public class Obelisk : MonoBehaviour, IDamageable
             GetComponent<BoxCollider>().isTrigger = false;
             GetComponent<Rigidbody>().isKinematic = true;
             transform.position = new Vector3(transform.position.x, other.transform.position.y, transform.position.z);
-
-            foreach (var vb in m_VampireBatList)
-            {
-                vb.transform.position = new Vector3(vb.transform.position.x,
-                                                    vb.transform.position.y + transform.position.y,
-                                                    transform.position.z);
-            }
-
+            
             StartCoroutine(SpawnEnemy());
         }
     }
@@ -81,7 +60,7 @@ public class Obelisk : MonoBehaviour, IDamageable
     {
         Debug.Log("Obelisk Died");
 
-        Destroy(gameObject);
+        gameObject.SetActive(false);
 
         Debug.Log("Obelisk Drops Pickups");
         foreach (GameObject go in m_PickupDrops)
@@ -100,10 +79,12 @@ public class Obelisk : MonoBehaviour, IDamageable
             yield return null;
         }
 
-        foreach (var vb in m_VampireBatList)
+        for(int i = 0; i < m_NbVampireBats; i++)
         {
             Debug.Log($"{name} Spawns VampireBat");
-            vb.SetActive(true);
+            GameObject go = ObjectPooler.GetPooledObject(VAMPIRE_BAT_PREFAB);
+            go.transform.position = new Vector3(transform.position.x + RandomSpawnPos(), transform.position.y + 2, transform.position.z + RandomSpawnPos());
+            go.SetActive(true);
         }
         
         while (true)
