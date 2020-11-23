@@ -1851,8 +1851,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f61dc6b695cc44196ff90230cf7f62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  referenceTransform: {fileID: 62533651596038712}
-  collisionOffset: 0.1
+  m_ReferenceTransform: {fileID: 62533651517666494}
+  m_CollisionOffset: 0.2
 --- !u!1 &62533651595207953
 GameObject:
   m_ObjectHideFlags: 0
@@ -2788,7 +2788,7 @@ MonoBehaviour:
   m_RunSpeed: 6
   m_JumpSpeed: 8
   m_Gravity: 20
-  m_JumpTimer: 1.2
+  m_JumpRate: 1.2
   m_JumpStam: 10
   m_StaminaDepletion: 5
   m_StaminaRecovery: 15
