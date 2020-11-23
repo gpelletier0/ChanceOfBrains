@@ -5,8 +5,13 @@ public static class ObjectPooler
 {
     private const int DEFAULT_SIZE = 5;
     private const bool m_bExpand = true;
-    private static readonly Dictionary<string, List<GameObject>> m_ObjectPools = new Dictionary<string, List<GameObject>>();
+    private static Dictionary<string, List<GameObject>> m_ObjectPools;
 
+
+    public static void Initialize()
+    {
+        m_ObjectPools = new Dictionary<string, List<GameObject>>();
+    }
 
     private static bool Exists(string path)
     {
