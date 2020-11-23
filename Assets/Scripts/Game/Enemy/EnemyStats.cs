@@ -18,10 +18,12 @@ public class EnemyStats
     [SerializeField] public float m_AttackDistance;
     [SerializeField] public float m_AggroDistance;
 
+    private float m_StartingHP;
 
     public EnemyStats(float hp = BASE_HP, float dmg = BASE_DAMAGE, float atkspd = BASE_ATTACK_SPEED)
     {
         m_HP = hp;
+        m_StartingHP = hp;
         m_Damage = dmg;
         m_AttackSpeed = atkspd;
         m_DamageTimer = m_AttackSpeed;
@@ -31,6 +33,11 @@ public class EnemyStats
     {
         get { return m_HP; }
         set { m_HP = value; }
+    }
+
+    public float StartingHP
+    {
+        get => m_StartingHP;
     }
 
     public float Damage
